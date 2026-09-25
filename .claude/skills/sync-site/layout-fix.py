@@ -12,7 +12,8 @@ Fix, injected before </head> (`!important` beats the inline styles):
 - hero <h1>: allow wrapping at every width, balanced lines (the English title still
   fits on one line per span on desktop, so its intended look is unchanged);
 - stat numbers: allow wrapping and step the size down below 640 px;
-- the hero eyebrow line (authors) may wrap below 640 px;
+- the hero eyebrow line and the authors/formats line may wrap below 640 px (Design
+  gives the latter nowrap + ellipsis, which hid the formats on phones);
 - a no-horizontal-scroll guard for narrow screens.
 Run AFTER seo-clean-urls.py and BEFORE book-seo.py (fr.html inherits it). Idempotent.
 """
@@ -22,7 +23,7 @@ CSS = ('<style id="woai-layout-fix">'
        'h1[style*="nowrap"]{white-space:normal!important;text-wrap:balance}'
        '@media (max-width:640px){'
        'span[style*="tabular-nums"][style*="nowrap"]{white-space:normal!important;font-size:2rem!important;overflow-wrap:anywhere}'
-       'p span[style*="nowrap"]{white-space:normal!important}'
+       'p span[style*="nowrap"],p[style*="nowrap"]{white-space:normal!important;text-overflow:clip!important}'
        'html,body{overflow-x:hidden}'
        '}</style>')
 

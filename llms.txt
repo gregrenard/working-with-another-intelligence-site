@@ -1,6 +1,6 @@
 # Working with Another Intelligence
 
-> A book by Marylène Delbourg-Delphis and Gregory Renard: "Working with Another Intelligence — An AI Reality Test and Management Reality Check". Part 1 is a first-person, real-time account of two years inside a large European industrial group (anonymized as ACME) that took AI from shadow use to its own sovereign platform with 11,000 connected accounts, with no layoffs. Part 2, the Advanced Executive Lab, is a management reality check: what AI changes for readiness, operability, employees, human agency, governance and ROI. French edition first (ebook and audiobook), English edition to follow.
+> A book by Marylène Delbourg-Delphis and Gregory Renard: "Working with Another Intelligence — An AI Reality Test and Management Reality Check". Part 1 is a first-person, real-time account of two years inside a large European industrial group (anonymized as ACME) that took AI from shadow use to its own sovereign platform with 11,000 connected accounts, with no layoffs. Part 2, the Advanced Executive Lab, is a management reality check: what AI changes for readiness, operability, employees, human agency, governance and ROI. Ebook and audiobook, in English and in French.
 
 ## What the book argues
 
@@ -20,5 +20,5 @@
 
 ## Pages
 
-- [Home](https://working-with-another-intelligence.com/): The book — why it was written, the problem it addresses, the two parts and sixteen chapters, the authors, a free extract (introduction and Chapter 1), editions and formats, press and talks, and the English-edition waitlist (English).
+- [Home](https://working-with-another-intelligence.com/): The book — why it was written, the problem it addresses, the two parts and sixteen chapters, the authors, a free extract (introduction and Chapter 1), editions and formats, press and talks, and pre-orders (English).
 - [Accueil (français)](https://working-with-another-intelligence.com/fr): la même page en français — pourquoi ce livre, le problème qu'il traite, les deux parties et seize chapitres, les auteurs, l'extrait gratuit (introduction et chapitre 1), les éditions ebook et audio, presse et conférences.
