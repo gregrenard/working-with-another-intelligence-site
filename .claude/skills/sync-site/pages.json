@@ -1,0 +1,18 @@
+{
+  "_comment": [
+    "Single source of truth for the site's page list. Read by extract-pulled.py,",
+    "deploy.sh, verify.sh and prerender.py via manifest.py — do NOT re-hardcode a",
+    "page list in any of them.",
+    "",
+    "Adding a page: add ONE entry here, then add its URL to sitemap.xml and a line",
+    "to llms.txt. verify.sh gate (i) fails until those two match this file.",
+    "",
+    "role: home    -> the Design home; deployed as index.html (generated artifact)",
+    "     content  -> a real page: gets static SEO head, pre-render, sitemap, llms.txt",
+    "     stub     -> redirect-only page: no pre-render, no sitemap, no llms.txt entry"
+  ],
+  "site": "https://working-with-another-intelligence.com",
+  "pages": [
+    { "design": "Working with Another Intelligence.dc.html", "slug": "index", "role": "home" }
+  ]
+}

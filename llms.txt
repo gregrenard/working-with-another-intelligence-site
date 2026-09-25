@@ -1,0 +1,23 @@
+# Working with Another Intelligence
+
+> A book by Marylène Delbourg-Delphis and Gregory Renard: "Working with Another Intelligence — An AI Reality Test and Management Reality Check". Part 1 is a first-person, real-time account of two years inside a large European industrial group (anonymized as ACME) that took AI from shadow use to its own sovereign platform with 11,000 connected accounts, with no layoffs. Part 2, the Advanced Executive Lab, is a management reality check: what AI changes for readiness, operability, employees, human agency, governance and ROI. French edition first (ebook and audiobook), English edition to follow.
+
+## What the book argues
+
+- Responsible AI will be built (or not) inside companies, one decision at a time, not only by regulators.
+- Cognitive sovereignty: an organization must stay the owner of its own knowledge when another intelligence is available everywhere.
+- AI implementation is a knowledge-structuring exercise before it is a technology deployment.
+- Next to Systems of Record (ERP, CRM), companies need a System of Intelligence that mobilizes their own knowledge.
+- "Time returned", not "time saved": the value of AI depends on what the organization does with the capacity it frees.
+- Humans are always in the loop; the real question is which human, in which loop, with what authority.
+- Governance must operate where people and AI actually work: the TRUST conditions (Transparency, Responsibility, Usability, Stopability, Traceability).
+- The Innovation Readiness Ratio (Landing Gear ÷ Amplitude): assess organizational readiness before setting ambition.
+
+## Authors
+
+- Marylène Delbourg-Delphis: serial tech CEO, founder of ACI (4th Dimension, 1985), one of the first European women to found a Silicon Valley technology company (1987, with Guy Kawasaki), board member and advisor to 40+ companies; École Normale Supérieure, PhD in philosophy; Légion d'honneur (2018); author of "Beyond Eureka! The Rocky Roads to Innovating" (Georgetown University Press, 2024). https://www.delbourg-delphis.org/
+- Gregory Renard: applied AI architect since 1996; creator of Angie, France's first large-scale conversational assistant (2012); contributor to France's national AI strategy (AI for Humanity); NASA Frontier Development Lab technical committee since 2016; co-author of the Holberton-Turing Oath (2018); co-founder and president of Everyone.AI. https://gregory-renard.com
+
+## Pages
+
+- [Home](https://working-with-another-intelligence.com/): The book — why it was written, the problem it addresses, the two parts and sixteen chapters, the authors, a free extract (introduction and Chapter 1), editions and formats, press and talks, and the English-edition waitlist. Available in English and French (?lang=fr).
