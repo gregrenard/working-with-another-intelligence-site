@@ -34,8 +34,9 @@ def _by_role(*roles):
 
 
 def design_pages():
-    """Every Design-side filename to pull, home included (extract-pulled.py)."""
-    return [p["design"] for p in PAGES]
+    """Every Design-side filename to pull, home included (extract-pulled.py).
+    Variants are generated at deploy time, never pulled."""
+    return [p["design"] for p in PAGES if p["role"] != "variant"]
 
 
 def home_design():
@@ -61,14 +62,19 @@ def stub_slugs():
     return [p["slug"] for p in _by_role("stub")]
 
 
+def variant_slugs():
+    """Pages generated at deploy from another page (e.g. the French /fr)."""
+    return [p["slug"] for p in _by_role("variant")]
+
+
 def prerender_files():
     """Deployed .html files that carry a static pre-render mirror (index.html first)."""
-    return ["index.html"] + [s + ".html" for s in content_slugs()]
+    return ["index.html"] + [s + ".html" for s in content_slugs() + variant_slugs()]
 
 
 def sitemap_urls():
     """Canonical URLs that must appear in sitemap.xml AND llms.txt."""
-    return [SITE + "/"] + [SITE + "/" + s for s in content_slugs()]
+    return [SITE + "/"] + [SITE + "/" + s for s in content_slugs() + variant_slugs()]
 
 
 _QUERIES = {
@@ -77,6 +83,7 @@ _QUERIES = {
     "subpages": subpage_slugs,
     "content": content_slugs,
     "stubs": stub_slugs,
+    "variants": variant_slugs,
     "prerender": prerender_files,
     "sitemap-urls": sitemap_urls,
 }

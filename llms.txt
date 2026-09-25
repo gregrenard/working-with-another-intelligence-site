@@ -20,4 +20,5 @@
 
 ## Pages
 
-- [Home](https://working-with-another-intelligence.com/): The book — why it was written, the problem it addresses, the two parts and sixteen chapters, the authors, a free extract (introduction and Chapter 1), editions and formats, press and talks, and the English-edition waitlist. Available in English and French (?lang=fr).
+- [Home](https://working-with-another-intelligence.com/): The book — why it was written, the problem it addresses, the two parts and sixteen chapters, the authors, a free extract (introduction and Chapter 1), editions and formats, press and talks, and the English-edition waitlist (English).
+- [Accueil (français)](https://working-with-another-intelligence.com/fr): la même page en français — pourquoi ce livre, le problème qu'il traite, les deux parties et seize chapitres, les auteurs, l'extrait gratuit (introduction et chapitre 1), les éditions ebook et audio, presse et conférences.

@@ -8,7 +8,7 @@
 # to his site. The book page's three forms are NOT wired yet (see SKILL.md, "Forms").
 #
 # Pipeline order is critical (see SKILL.md):
-#   cp Home->index -> home-link ./ -> seo-clean-urls -> rename *.dc.html->*.html
+#   cp Home->index -> home-link ./ -> seo-clean-urls -> layout-fix -> book-seo (fr.html) -> rename *.dc.html->*.html
 #   (+ rm Home) -> bump sitemap -> prerender (LAST) -> verify
 #
 # Does NOT touch the permanent repo files (404.html, CNAME, robots.txt, sitemap.xml
@@ -45,6 +45,12 @@ echo "==> 3/6  forms: NOT wired (no endpoint yet) — see SKILL.md 'Forms'"
 
 echo "==> 4/6  clean URLs + static SEO head"
 python3 "$SKILL_DIR/seo-clean-urls.py"
+
+echo "==> 4a/6 layout fix: hero title + stat numbers wrap (mobile overflow, long French title)"
+python3 "$SKILL_DIR/layout-fix.py"
+
+echo "==> 4b/6 book SEO: favicon + theme-color, JSON-LD, real French URL /fr (fr.html), language routing"
+python3 "$SKILL_DIR/book-seo.py"
 
 echo "==> 5/6  rename *.dc.html -> *.html (+ drop redundant home source)"
 for f in $SUBPAGES; do [ -f "$f.dc.html" ] && mv "$f.dc.html" "$f.html"; done

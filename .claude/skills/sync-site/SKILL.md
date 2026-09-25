@@ -18,7 +18,7 @@ This is a **new, standalone site** for the book *Working with Another Intelligen
 Once the user confirms editing in Claude Design is **finished** (DesignSync reads the live project):
 1. `DesignSync list_files` → check the page filenames still match `python3 .claude/skills/sync-site/manifest.py design`. A new or renamed page means updating `pages.json`, then `sitemap.xml` and `llms.txt` (gate (i) fails until all three agree).
 2. `DesignSync get_file` for each page (and `support.js` if the runtime changed).
-3. `python3 .claude/skills/sync-site/extract-pulled.py` → writes the pulled pages byte-exact from the session transcript. **Never retype a page.**
+3. `python3 .claude/skills/sync-site/extract-pulled.py <session.jsonl>` → writes the pulled pages byte-exact from the session transcript. **Never retype a page.** Pass the transcript path explicitly when the session was started outside this folder: auto-discovery only looks under this folder's project directory.
 4. `bash .claude/skills/sync-site/deploy.sh` → full pipeline, then `verify.sh`. Every gate must pass. Gate (j) stays a WARN until the forms are wired.
 5. Assets: `get_file` is capped at 256 KiB. Images come back truncated (the portraits did on 24 Sep 2026). Keep the working local file and never commit a truncated one. The originals live in `book-cognitive-sovereignty/promotion/assets/`.
 6. Review `git diff`, commit (English message explaining what changed and why, **no Claude attribution**).
@@ -30,12 +30,15 @@ Once the user confirms editing in Claude Design is **finished** (DesignSync read
 2  home-link rewrite -> "./"                 (quote-anchored; name read from pages.json, %20-encoded)
 3  forms: not wired yet                      (see "Forms")
 4  seo-clean-urls.py                         (strip .dc.html, lift <helmet> into <head>, lang="en")
+4a layout-fix.py                             (hero title + stat numbers may wrap; no horizontal scroll on phones)
+4b book-seo.py                               (favicon/theme-color, JSON-LD, generates fr.html = the /fr URL, language routing)
 5  rename *.dc.html -> *.html, rm home source
 6  bump sitemap <lastmod>
 7  prerender.py                              (LAST: headless render, static mirror for no-JS crawlers)
    verify.sh                                 (gates a–j)
 ```
-- Pre-render runs **last**. Clean-URLs runs **before** the rename.
+- Pre-render runs **last**. Clean-URLs runs **before** the rename. layout-fix runs before book-seo, so fr.html inherits it.
+- `fr.html` is a **generated variant** (`role: variant` in `pages.json`), never pulled from Design. book-seo.py localizes only the static `<head>` and the `<helmet>`, **never the component script**: the English strings also exist there as JS literals, and a French apostrophe ("L'IA") inside a `'…'` literal broke the whole runtime on 2026-09-24. If Design changes the title, description or the language logic, book-seo.py stops with a clear error. Update its EN/FR strings and patterns then.
 - `index.html` is a **generated artifact**: never edit it. Fix content in Claude Design.
 - Stages removed from Greg's pipeline, because they are his site in code: contact-form patch (his Google Apps Script endpoint), `enrich-seo.py` (his biography), `hero-wrap-fix.py` (his CSS), and the gallery `.png`→`.jpg` rename.
 
@@ -46,7 +49,13 @@ The book page has three forms: the free extract, reserve your copy, and invite. 
 3. **Never reuse the endpoint from gregory-renard-site**: it writes into Greg's personal contact spreadsheet.
 
 ## Verify gates
-(a) no `.dc.html` / `.//` · (b) index is the home, not a redirect · (c) `<title>` + `og:title` in `<head>` · (c2) stubs · (d) internal links resolve · (e) local assets resolve · (f) permanent files present, CNAME and robots.txt match the domain in `pages.json` · (h) pre-render mirror with zero `{{ }}` · (i) `pages.json` = `sitemap.xml` = `llms.txt` · (j) forms wired (WARN).
+(a) no `.dc.html` / `.//` · (b) index is the home, not a redirect · (c) `<title>` + `og:title` in `<head>` · (c2) stubs · (d) internal links resolve · (e) local assets resolve · (f) permanent files present, CNAME and robots.txt match the domain in `pages.json` · (h) pre-render mirror with zero `{{ }}` · (i) `pages.json` = `sitemap.xml` = `llms.txt` · (j) forms wired (WARN) · (k) languages: `/` is `lang="en"` with canonical `/`, `/fr` is `lang="fr"` with canonical `/fr`, both carry hreflang en + fr.
+
+## Languages
+Two real URLs, EN at `/` and FR at `/fr`, cross-linked with hreflang (x-default `/`) in the head and in `sitemap.xml`. The FR/EN button navigates between them. A stored preference or a legacy `?lang=fr` link on `/` goes to `/fr`, and `?lang=en` on `/fr` goes to `/`. Each URL gets its own static pre-render, so crawlers that do not run JavaScript see French on `/fr`.
+
+## Desktop and mobile checks
+After every deploy, check 1440 px and a **real** 390 px. Headless Chrome cannot go below a 500 px window: a `--window-size=390` screenshot is a 500 px layout cropped, which fakes an overflow. Load the page in a 390 px `<iframe>` inside a wider headless window instead, and measure `scrollWidth` and the elements whose right edge passes the viewport (0 expected).
 
 ## Permanent repo files (not from Design; a sync must never clobber them)
 `CNAME`, `404.html`, `robots.txt`, `sitemap.xml`, `llms.txt` (hand-written: editorial, never generated), `support.js` (the dc-runtime pulled from this Design project; vendored, never edit), `assets/`.

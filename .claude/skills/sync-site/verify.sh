@@ -13,6 +13,7 @@ cd "$REPO"
 SUBPAGES="$(python3 "$SKILL_DIR/manifest.py" subpages | tr '\n' ' ')"
 CONTENT="$(python3 "$SKILL_DIR/manifest.py" content  | tr '\n' ' ')"
 STUBS="$(python3   "$SKILL_DIR/manifest.py" stubs    | tr '\n' ' ')"
+VARIANTS="$(python3 "$SKILL_DIR/manifest.py" variants | tr '\n' ' ')"
 fail=0
 
 echo "--- (a) extension gone + no accidental .// ---"
@@ -25,7 +26,7 @@ echo "--- (b) index.html is the homepage (not a redirect) ---"
 
 echo "--- (c) static SEO present: each content page has <title> + og:title inside <head> ---"
 cfail=0
-for f in index.html $(for n in $CONTENT; do echo "$n.html"; done); do
+for f in index.html $(for n in $CONTENT $VARIANTS; do echo "$n.html"; done); do
   h=$(awk 'BEGIN{p=1}/<body/{p=0}{if(p)print}' "$f")
   if echo "$h" | grep -q "<title>" && echo "$h" | grep -q "og:title"; then :; else echo "  MISS seo-head: $f"; fail=1; cfail=1; fi
 done
@@ -58,7 +59,7 @@ SITE_HOST="$(python3 -c "import sys; sys.path.insert(0,'$SKILL_DIR'); from manif
 grep -q "Sitemap: https://$SITE_HOST/sitemap.xml" robots.txt && echo "  ok: robots.txt Sitemap line" || { echo "  BAD: robots.txt Sitemap line wrong"; fail=1; }
 
 echo "--- (h) static pre-render mirror present + resolved (no {{ }} inside it) ---"
-for f in index.html $(for n in $CONTENT; do echo "$n.html"; done); do
+for f in index.html $(for n in $CONTENT $VARIANTS; do echo "$n.html"; done); do
   python3 - "$f" <<'PY' || fail=1
 import sys, re
 f = sys.argv[1]; s = open(f, encoding="utf-8").read()
@@ -73,6 +74,25 @@ if ph:
 print("  ok:", f)
 PY
 done
+
+echo "--- (k) languages: each URL declares its own lang, canonical and both hreflang ---"
+python3 - <<'PYK' || fail=1
+import re, sys
+bad = 0
+for f, lang, canon in (("index.html", "en", "/"), ("fr.html", "fr", "/fr")):
+    try:
+        s = open(f, encoding="utf-8").read()
+    except FileNotFoundError:
+        print("  BAD: %s missing" % f); bad = 1; continue
+    head = s.split("<body", 1)[0]
+    ok = ('<html lang="%s">' % lang) in s \
+        and re.search(r'rel="canonical" href="[^"]*%s"' % re.escape(canon), head) \
+        and 'hreflang="fr" href="https://working-with-another-intelligence.com/fr"' in head \
+        and 'hreflang="en"' in head
+    print(("  ok: " if ok else "  BAD: ") + f + " (lang=%s, canonical %s, hreflang en+fr)" % (lang, canon))
+    bad |= (not ok)
+sys.exit(bad)
+PYK
 
 echo "--- (i) pages.json == sitemap.xml == llms.txt (three-way, both directions) ---"
 python3 - "$SKILL_DIR" <<'PY2' || fail=1
