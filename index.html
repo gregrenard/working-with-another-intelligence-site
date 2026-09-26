@@ -181,7 +181,12 @@ details[open] .wa-chev{transform:rotate(45deg)}
   <div class="wa-pad" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(24px,3.5vw,48px) 32px clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));column-gap:clamp(40px,6vw,88px);row-gap:28px;align-items:center">
     <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:18px;min-width:0;container-type:inline-size">
       <p style="margin:0;display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#7A5E14"><span style="width:32px;height:1px;background:#94731B;flex:none"></span><span style="font-size:clamp(9px,1vw,12px);letter-spacing:0.1em;white-space:nowrap">{{ t.heroEyebrow }}</span></p>
-      <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.5rem,4.3cqi,3.4rem);line-height:1.08;letter-spacing:-0.02em;display:flex;flex-direction:column;gap:4px;white-space:nowrap"><span>{{ punchA }}</span><span style="color:#A8322A">{{ punchB }}</span></h1>
+      <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.5rem,4.1cqi,3.4rem);line-height:1.08;letter-spacing:-0.02em;display:flex;flex-direction:column;gap:4px;white-space:nowrap"><span>{{ punchA }}</span><span style="color:#A8322A;transition:opacity .45s ease;opacity:{{ punchOpacity }}" onMouseEnter="{{ punchPause }}" onMouseLeave="{{ punchResume }}">{{ punchB }}</span></h1>
+      <div style="display:flex;align-items:center;gap:4px;margin:-8px 0 0 -7px">
+        <sc-for list="{{ punchDots }}" as="d" hint-placeholder-count="4">
+          <button type="button" onClick="{{ d.go }}" aria-label="{{ d.label }}" aria-current="{{ d.current }}" style="width:24px;height:24px;padding:0;border:0;background:transparent;cursor:pointer;display:grid;place-items:center"><span style="display:block;width:{{ d.size }};height:8px;border-radius:4px;background:{{ d.bg }};transition:width .3s,background .3s"></span></button>
+        </sc-for>
+      </div>
       <p style="margin:0;font-size:1.15rem;line-height:1.6;color:#3E4557;text-wrap:pretty">{{ t.heroSub }}<br>{{ t.heroSub2 }}</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
@@ -382,8 +387,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
       </article>
       <article style="background:#FAF7EF;border:1px solid #E3DCCB;border-top:4px solid #A8322A;display:flex;flex-direction:column">
         <div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#172139">
-          <img src="assets/greg-renard.png" alt="Gregory Renard" style="width:100%;height:100%;object-fit:cover;object-position:50% 12%;filter:{{ photoFilter }};display:block">
-          <div style="position:absolute;inset:0;background:#28344F;mix-blend-mode:screen;opacity:{{ tintOpacity }};pointer-events:none"></div>
+          <img src="assets/greg-renard.png" alt="Gregory Renard" style="width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block">
         </div>
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
           <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:1.6rem;line-height:1.2">Gregory Renard, <em style="color:#A8322A">{{ t.grTag }}</em></h3>
@@ -717,9 +721,9 @@ details[open] .wa-chev{transform:rotate(45deg)}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;pressEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;heroLine&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sovereignty&quot;,&quot;training&quot;,&quot;leak&quot;,&quot;buy&quot;,&quot;asset&quot;,&quot;employees&quot;,&quot;brussels&quot;],&quot;default&quot;:&quot;sovereignty&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;phase&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;preorder&quot;,&quot;launch&quot;],&quot;default&quot;:&quot;preorder&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;audioPrice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;releaseDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;showGift&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;portraits&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;duotone&quot;,&quot;color&quot;],&quot;default&quot;:&quot;duotone&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Authors&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;pressEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;heroLine&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sovereignty&quot;,&quot;training&quot;,&quot;leak&quot;,&quot;buy&quot;,&quot;asset&quot;,&quot;employees&quot;,&quot;brussels&quot;],&quot;default&quot;:&quot;sovereignty&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;punchRotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;label&quot;:&quot;Rotate red line&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;punchSeconds&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:7,&quot;min&quot;:3,&quot;max&quot;:20,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;label&quot;:&quot;Seconds per line&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;phase&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;preorder&quot;,&quot;launch&quot;],&quot;default&quot;:&quot;preorder&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;audioPrice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;releaseDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;showGift&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;portraits&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;duotone&quot;,&quot;color&quot;],&quot;default&quot;:&quot;duotone&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Authors&quot;}}">
 class Component extends DCLogic {
-  state = { lang: 'en', q: 0, submitted: false, firstName: '', reserved: false, reserveName: '', invited: false };
+  state = { lang: 'en', q: 0, submitted: false, firstName: '', reserved: false, reserveName: '', invited: false, punch: 0, punchFade: false };
 
   componentDidMount() {
     try {
@@ -728,6 +732,24 @@ class Component extends DCLogic {
       if (l === 'fr') { location.replace('fr'); return; }
       document.documentElement.lang = 'en';
     } catch (e) {}
+    this.startPunch();
+  }
+  componentWillUnmount() { this.stopPunch(); }
+  componentDidUpdate(prev) {
+    if (prev.punchRotate !== this.props.punchRotate || prev.punchSeconds !== this.props.punchSeconds) this.startPunch();
+  }
+  startPunch() {
+    this.stopPunch();
+    let reduce = false; try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (!(this.props.punchRotate ?? true) || reduce) return;
+    const ms = Math.max(3, this.props.punchSeconds ?? 7) * 1000;
+    this._punchTimer = setInterval(() => { if (!this._punchHover) this.goPunch(this.state.punch + 1); }, ms);
+  }
+  stopPunch() { clearInterval(this._punchTimer); clearTimeout(this._punchSwap); }
+  goPunch(i, manual) {
+    if (manual) this.startPunch();
+    this.setState({ punchFade: true });
+    this._punchSwap = setTimeout(() => this.setState({ punch: i, punchFade: false }), 450);
   }
   setLang(l) {
     try { localStorage.setItem('woai_lang', l); } catch (e) {}
@@ -743,6 +765,10 @@ class Component extends DCLogic {
     const pressEmail = this.props.pressEmail || 'presse@working-with-another-intelligence.com';
     const hk = this.props.heroLine ?? 'sovereignty';
     const punch = T.punch[hk] || T.punch.sovereignty;
+    const rotating = this.props.punchRotate ?? true;
+    const lines = rotating ? T.punchRotate : [punch[1]];
+    const pi = this.state.punch % lines.length;
+    const punchDots = rotating ? lines.map((x, i) => ({ go: () => this.goPunch(i, true), label: (lang === 'fr' ? 'Accroche ' : 'Line ') + (i + 1), current: i === pi, bg: i === pi ? '#A8322A' : '#CFC6B6', size: i === pi ? '22px' : '8px' })) : [];
     const quotes = T.quotes;
     const q = this.state.q % quotes.length;
     const setQ = i => this.setState({ q: (i + quotes.length) % quotes.length });
@@ -757,7 +783,10 @@ class Component extends DCLogic {
       t: T, lang, isFr: lang === 'fr',
       langLabel: lang === 'en' ? 'FR' : 'EN',
       toggleLang: () => this.setLang(lang === 'en' ? 'fr' : 'en'),
-      punchA: punch[0], punchB: punch[1],
+      punchA: punch[0], punchB: lines[pi],
+      punchOpacity: this.state.punchFade ? 0 : 1,
+      punchPause: () => { this._punchHover = true; }, punchResume: () => { this._punchHover = false; },
+      punchDots,
       stickyBuy: T.navBuy,
       formats: T.formats, langs: T.langs,
       lexicon: T.lexicon.map((x, i) => ({ ...x, border: i % 3 === 2 ? '0' : '2px solid #28344F', fill: i % 3 === 2 ? '#94731B' : 'transparent', radius: i % 3 === 1 ? '50%' : (i % 3 === 2 ? '58% 42% 63% 37% / 45% 55% 45% 55%' : '0') })),
@@ -807,6 +836,7 @@ class Component extends DCLogic {
         employees: ['Your employees did not wait for your AI strategy.', 'Here is how to catch up, for real.'],
         brussels: ['Responsible AI will not be born in Brussels.', 'It will be born inside your company.']
       },
+      punchRotate: ['Protect your know-how before it works for someone else.', 'Earn trust early. It is hard to patch after deployment.', 'Buy the capability. Build your cognitive sovereignty.', 'Catch up with your employees. They did not wait for you.', 'Turn the hours returned into growth and market share.'],
       heroTagline: 'Put AI to work. Keep your intelligence yours.',
       heroSub: 'The field-tested account of two years inside a European industrial group that took AI from first experiments to 11,000 users.', heroSub2: 'No layoffs. No brain handed to a vendor.',
       gainsLabel: 'What you walk away with',
@@ -1016,7 +1046,7 @@ class Component extends DCLogic {
       langAria: 'Switch to English',
       heroEyebrow: 'Le nouveau livre de Marylène Delbourg-Delphis & Gregory Renard',
       punch: {
-        sovereignty: ['Mettez l’IA au travail maintenant.', 'Protégez votre savoir-faire avant qu’il ne travaille pour d’autres.'],
+        sovereignty: ['Mettez l’IA au travail maintenant.', 'Protégez votre savoir-faire avant qu’on ne s’en serve.'],
         training: ['Votre entreprise entraîne une IA.', 'La question : celle de qui ?'],
         leak: ['Votre savoir-faire sort par le navigateur.', 'Voici comment le garder.'],
         buy: ['Tout le monde peut acheter de l’IA.', 'Personne ne peut acheter votre savoir-faire.'],
@@ -1031,6 +1061,7 @@ class Component extends DCLogic {
         { h: 'Des réponses honnêtes pour vos équipes.', p: 'Que dire quand on vous demande « Est-ce que l’IA va me remplacer ? », sans slogans.' },
         { h: 'Un ROI que vous pouvez défendre.', p: 'Mesurer le temps rendu, pas le temps gagné, et décider quoi en faire avant que le DAF ne pose la question.' }
       ],
+      punchRotate: ['Protégez votre savoir-faire avant qu’on ne s’en serve.', 'Gagnez la confiance tôt. Elle ne se corrige pas après coup.', 'Achetez la capacité. Bâtissez la souveraineté cognitive.', 'Rattrapez vos salariés. Ils ne vous ont pas attendu.', 'Changez les heures rendues en parts de marché.'],
       heroTagline: 'Mettez l’IA au travail. Gardez votre intelligence à vous.',
       heroSub: 'Le récit de terrain de deux années au cœur d’un grand groupe industriel européen, des premiers essais à 11 000 utilisateurs.', heroSub2: 'Sans licenciement. Sans livrer son cerveau à un fournisseur.',
       heroBuy: 'Réserver mon exemplaire',
