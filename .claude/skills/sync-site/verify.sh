@@ -51,11 +51,20 @@ for t in $(grep -rhoE "assets/[A-Za-z0-9%@_./-]+\.(png|jpg|jpeg|webp|gif|svg|mp4
 done
 
 echo "--- (f) permanent repo files intact (must NOT be clobbered by a sync) ---"
-for pf in 404.html CNAME robots.txt sitemap.xml llms.txt support.js; do
+for pf in 404.html robots.txt sitemap.xml llms.txt support.js; do
   [ -f "$pf" ] && echo "  ok: $pf" || { echo "  BAD: $pf MISSING"; fail=1; }
 done
 SITE_HOST="$(python3 -c "import sys; sys.path.insert(0,'$SKILL_DIR'); from manifest import SITE; print(SITE.split('//')[1])")"
-[ "$(tr -d '[:space:]' < CNAME)" = "$SITE_HOST" ] && echo "  ok: CNAME = $SITE_HOST" || { echo "  BAD: CNAME does not match pages.json site ($SITE_HOST)"; fail=1; }
+DRAFT="$(python3 "$SKILL_DIR/manifest.py" draft)"
+if [ "$DRAFT" = "1" ]; then
+  [ -f CNAME ] && { echo "  BAD: draft phase but CNAME present (Pages would bind the unconnected domain)"; fail=1; } || echo "  ok: draft phase, no CNAME"
+  for f in index.html fr.html; do
+    grep -q '<meta name="robots" content="noindex, nofollow">' "$f" && ! grep -q 'content="index, follow"' "$f" \
+      && echo "  ok: $f is noindex (draft)" || { echo "  BAD: $f not noindex in draft phase"; fail=1; }
+  done
+else
+  [ "$(tr -d '[:space:]' < CNAME 2>/dev/null)" = "$SITE_HOST" ] && echo "  ok: CNAME = $SITE_HOST" || { echo "  BAD: CNAME does not match pages.json site ($SITE_HOST)"; fail=1; }
+fi
 grep -q "Sitemap: https://$SITE_HOST/sitemap.xml" robots.txt && echo "  ok: robots.txt Sitemap line" || { echo "  BAD: robots.txt Sitemap line wrong"; fail=1; }
 
 echo "--- (h) static pre-render mirror present + resolved (no {{ }} inside it) ---"

@@ -25,8 +25,20 @@
     <div class="code">404</div>
     <h1>This page does not exist.</h1>
     <p>Reality check passed: the link is wrong, not you.</p>
-    <a class="btn" href="/">Back to the book</a>
-    <div class="fr">Cette page n'existe pas. <a href="/fr">Retour au livre</a></div>
+    <a class="btn" id="home" href="/">Back to the book</a>
+    <div class="fr">Cette page n'existe pas. <a id="homefr" href="/fr">Retour au livre</a></div>
   </div>
+<script>
+/* Works on the custom domain (/) and on a github.io project path (/<repo>/). */
+(function () {
+  var base = '/';
+  if (/\.github\.io$/.test(location.hostname)) {
+    var seg = location.pathname.split('/')[1];
+    if (seg) base = '/' + seg + '/';
+  }
+  document.getElementById('home').href = base;
+  document.getElementById('homefr').href = base + 'fr';
+})();
+</script>
 </body>
 </html>

@@ -14,15 +14,19 @@ regenerated from index.html on every run.
    og:locale fr_FR, canonical /fr, and the runtime defaults to French there. Non-JS
    crawlers then get a static French page (prerender.py mirrors it), not only English.
 4. Language toggle: each language has its own URL. The FR/EN button navigates between
-   / and /fr, a stored preference or a legacy ?lang=fr link on / goes to /fr, and
+   / and /fr (relative links, so it also works under a github.io project path), a stored preference or a legacy ?lang=fr link on / goes to /fr, and
    ?lang=en on /fr goes to /.
 
 The French strings are written here because the Design <helmet> only carries the
 English ones. Keep them in line with promotion/00-positioning.md.
 """
 import json
+import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from manifest import DRAFT  # draft phase: noindex, no custom domain
 
 SITE = "https://working-with-another-intelligence.com"
 MARK = "<!--book-seo-->"
@@ -57,13 +61,13 @@ MOUNT_DESIGN = """      const p = new URLSearchParams(location.search).get('lang
       document.documentElement.lang = l || 'en';"""
 MOUNT_EN = """      const p = new URLSearchParams(location.search).get('lang');
       const l = p || localStorage.getItem('woai_lang');
-      if (l === 'fr') { location.replace('/fr'); return; }
+      if (l === 'fr') { location.replace('fr'); return; }
       document.documentElement.lang = 'en';"""
 MOUNT_FR = """      const p = new URLSearchParams(location.search).get('lang');
-      if (p === 'en') { location.replace('/'); return; }
+      if (p === 'en') { location.replace('./'); return; }
       document.documentElement.lang = 'fr';"""
 SETLANG_DESIGN = "    try { localStorage.setItem('woai_lang', l); document.documentElement.lang = l; } catch (e) {}\n    this.setState({ lang: l });"
-SETLANG_NAV = "    try { localStorage.setItem('woai_lang', l); } catch (e) {}\n    if (l !== this.state.lang) location.href = (l === 'fr' ? '/fr' : '/');"
+SETLANG_NAV = "    try { localStorage.setItem('woai_lang', l); } catch (e) {}\n    if (l !== this.state.lang) location.href = (l === 'fr' ? 'fr' : './');"
 
 
 def must_replace(s, old, new, what, count=None):
@@ -101,6 +105,13 @@ def main():
         print("book-seo: index.html patched (favicon, theme-color, JSON-LD, hreflang /fr, language routing)")
     else:
         print("book-seo: index.html already patched")
+
+    # Draft phase: keep the provisional github.io URL out of search engines.
+    ROBOTS_ON, ROBOTS_OFF = '<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow">'
+    if DRAFT and ROBOTS_ON in s:
+        s = s.replace(ROBOTS_ON, ROBOTS_OFF)
+        open("index.html", "w", encoding="utf-8").write(s)
+        print("book-seo: DRAFT -> index.html set to noindex, nofollow")
 
     f = s.replace(MOUNT_EN, MOUNT_FR)
     f = f.replace("state = { lang: 'en'", "state = { lang: 'fr'", 1)

@@ -7,7 +7,7 @@
 <title>Travailler avec une autre intelligence — L'IA à l'épreuve du réel, le management à l'épreuve de l'IA</title>
 <meta name="description" content="Le livre de Marylène Delbourg-Delphis et Gregory Renard : deux ans au cœur d'un grand groupe industriel européen qui a fait fonctionner l'IA pour de vrai, et ce que cela change pour le management. Ebook et livre audio.">
 <meta name="author" content="Marylène Delbourg-Delphis, Gregory Renard">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://working-with-another-intelligence.com/fr">
 <link rel="alternate" hreflang="en" href="https://working-with-another-intelligence.com/">
 <link rel="alternate" hreflang="fr" href="https://working-with-another-intelligence.com/fr">
@@ -76,7 +76,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
 <title>Travailler avec une autre intelligence — L'IA à l'épreuve du réel, le management à l'épreuve de l'IA</title>
 <meta name="description" content="Le livre de Marylène Delbourg-Delphis et Gregory Renard : deux ans au cœur d'un grand groupe industriel européen qui a fait fonctionner l'IA pour de vrai, et ce que cela change pour le management. Ebook et livre audio.">
 <meta name="author" content="Marylène Delbourg-Delphis, Gregory Renard">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://working-with-another-intelligence.com/fr">
 <link rel="alternate" hreflang="en" href="https://working-with-another-intelligence.com/">
 <link rel="alternate" hreflang="fr" href="https://working-with-another-intelligence.com/fr">
@@ -724,13 +724,13 @@ class Component extends DCLogic {
   componentDidMount() {
     try {
       const p = new URLSearchParams(location.search).get('lang');
-      if (p === 'en') { location.replace('/'); return; }
+      if (p === 'en') { location.replace('./'); return; }
       document.documentElement.lang = 'fr';
     } catch (e) {}
   }
   setLang(l) {
     try { localStorage.setItem('woai_lang', l); } catch (e) {}
-    if (l !== this.state.lang) location.href = (l === 'fr' ? '/fr' : '/');
+    if (l !== this.state.lang) location.href = (l === 'fr' ? 'fr' : './');
   }
 
   renderVals() {

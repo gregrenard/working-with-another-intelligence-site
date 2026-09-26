@@ -7,7 +7,7 @@
 <title>Working with Another Intelligence — An AI Reality Test and Management Reality Check</title>
 <meta name="description" content="A book by Marylène Delbourg-Delphis and Gregory Renard. Two years inside a European industrial group that made AI work for real, and what it changes for management.">
 <meta name="author" content="Marylène Delbourg-Delphis, Gregory Renard">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://working-with-another-intelligence.com/">
 <link rel="alternate" hreflang="en" href="https://working-with-another-intelligence.com/">
 <link rel="alternate" hreflang="fr" href="https://working-with-another-intelligence.com/fr">
@@ -76,7 +76,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
 <title>Working with Another Intelligence — An AI Reality Test and Management Reality Check</title>
 <meta name="description" content="A book by Marylène Delbourg-Delphis and Gregory Renard. Two years inside a European industrial group that made AI work for real, and what it changes for management.">
 <meta name="author" content="Marylène Delbourg-Delphis, Gregory Renard">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://working-with-another-intelligence.com/">
 <link rel="alternate" hreflang="en" href="https://working-with-another-intelligence.com/">
 <link rel="alternate" hreflang="fr" href="https://working-with-another-intelligence.com/fr">
@@ -725,13 +725,13 @@ class Component extends DCLogic {
     try {
       const p = new URLSearchParams(location.search).get('lang');
       const l = p || localStorage.getItem('woai_lang');
-      if (l === 'fr') { location.replace('/fr'); return; }
+      if (l === 'fr') { location.replace('fr'); return; }
       document.documentElement.lang = 'en';
     } catch (e) {}
   }
   setLang(l) {
     try { localStorage.setItem('woai_lang', l); } catch (e) {}
-    if (l !== this.state.lang) location.href = (l === 'fr' ? '/fr' : '/');
+    if (l !== this.state.lang) location.href = (l === 'fr' ? 'fr' : './');
   }
 
   renderVals() {

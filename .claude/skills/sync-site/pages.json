@@ -14,6 +14,8 @@
     "                 static SEO head, pre-render, sitemap, llms.txt (book-seo.py makes /fr)"
   ],
   "site": "https://working-with-another-intelligence.com",
+  "draft": true,
+  "_draft_note": "Draft phase: served from gregrenard.github.io/working-with-another-intelligence-site/ with NO custom domain. While true: no CNAME file (Pages would bind the unconnected domain), pages are noindex. Set to false + restore CNAME when the domain is connected.",
   "pages": [
     { "design": "Working with Another Intelligence.dc.html", "slug": "index", "role": "home" },
     { "design": null, "slug": "fr", "role": "variant", "source": "index", "lang": "fr",

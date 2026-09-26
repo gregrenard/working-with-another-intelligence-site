@@ -26,6 +26,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 _DATA = json.load(open(os.path.join(_HERE, "pages.json"), encoding="utf-8"))
 
 SITE = _DATA["site"]
+DRAFT = bool(_DATA.get("draft", False))
 PAGES = [p for p in _DATA["pages"] if not p.get("_comment")]
 
 
@@ -84,6 +85,7 @@ _QUERIES = {
     "content": content_slugs,
     "stubs": stub_slugs,
     "variants": variant_slugs,
+    "draft": lambda: ["1" if DRAFT else "0"],
     "prerender": prerender_files,
     "sitemap-urls": sitemap_urls,
 }
