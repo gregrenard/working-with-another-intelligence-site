@@ -24,7 +24,7 @@ MUST run LAST (on the final *.html, after clean-URLs + rename) so the mirror's l
 are extensionless. Non-fatal: if Chrome is missing it warns and skips (pages still
 render via JS). Idempotent: strips any prior injection before re-injecting.
 
-Usage:  python3 .claude/skills/sync-site/prerender.py   (from repo root)
+Usage:  python3 .claude/skills/sync-book-site/prerender.py   (from repo root)
 """
 import os, re, sys, time, subprocess, threading
 from functools import partial

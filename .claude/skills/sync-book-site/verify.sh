@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # verify.sh — post-deploy sanity checks. Exits non-zero if anything is wrong.
-# Safe to run standalone:  bash .claude/skills/sync-site/verify.sh
+# Safe to run standalone:  bash .claude/skills/sync-book-site/verify.sh
 # Adapted from gregory-renard-site: gate (f) lists THIS repo's permanent files,
 # gate (g) (Greg's footer label) is dropped, gate (i) reads the domain from
 # pages.json, and gate (j) warns while the book page's forms are not wired.
@@ -68,12 +68,17 @@ fi
 grep -q "Sitemap: https://$SITE_HOST/sitemap.xml" robots.txt && echo "  ok: robots.txt Sitemap line" || { echo "  BAD: robots.txt Sitemap line wrong"; fail=1; }
 
 echo "--- (h) static pre-render mirror present + resolved (no {{ }} inside it) ---"
+DRAFT_MODE="$(python3 "$SKILL_DIR/manifest.py" draft)"
 for f in index.html $(for n in $CONTENT $VARIANTS; do echo "$n.html"; done); do
-  python3 - "$f" <<'PY' || fail=1
+  python3 - "$f" "$DRAFT_MODE" <<'PY' || fail=1
 import sys, re
 f = sys.argv[1]; s = open(f, encoding="utf-8").read()
 m = re.search(r"<!--dc-prerender-start-->(.*?)<!--dc-prerender-end-->", s, re.S)
 if not m:
+    if sys.argv[2] == "1":
+        # Draft phase: pages are noindex, so the no-JS mirror is not needed yet. The usual
+        # cause is an unfilled {{ }} placeholder in Design (check-layout reports it).
+        print("  WARN (draft, non-blocking): no pre-render mirror:", f); sys.exit(0)
     print("  MISS pre-render mirror:", f); sys.exit(1)
 if 'id="dc-prerender-css"' not in s:
     print("  MISS swap CSS:", f); sys.exit(1)
@@ -138,6 +143,12 @@ else
   echo "  WARN: the 3 forms (free extract / reserve / invite) show a success state but send"
   echo "        nothing. Wire a dedicated endpoint for THIS site before launch (see SKILL.md)."
 fi
+
+echo "--- (l) layout: desktop 1440 / tablet 768 / mobile 390, EN + FR, no overflow ---"
+python3 "$SKILL_DIR/check-layout.py" || fail=1
+
+echo "--- (m) SEO + LLM-SEO + guardrails ---"
+python3 "$SKILL_DIR/check-seo.py" || fail=1
 
 echo
 [ $fail -eq 0 ] && echo "VERIFY: all checks passed ✅" || echo "VERIFY: FAILURES above ❌"

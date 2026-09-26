@@ -7,7 +7,7 @@ session transcript to disk. Use when verify.sh flags an asset as MISSING because
 it was changed/added in Claude Design (DesignSync get_file caps at 256 KiB, so
 larger files still need a manual transfer).
 
-    python3 .claude/skills/sync-site/pull-asset.py assets/greg-home-orange.jpg
+    python3 .claude/skills/sync-book-site/pull-asset.py assets/greg-home-orange.jpg
 
 Run from the repo root. Auto-discovers the most recent session transcript.
 """

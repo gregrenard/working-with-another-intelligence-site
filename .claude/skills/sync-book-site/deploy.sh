@@ -14,7 +14,7 @@
 # Does NOT touch the permanent repo files (404.html, CNAME, robots.txt, sitemap.xml
 # content, llms.txt, support.js) — they are not from Design and must survive every sync.
 #
-# Usage:  bash .claude/skills/sync-site/deploy.sh      (run from anywhere)
+# Usage:  bash .claude/skills/sync-book-site/deploy.sh      (run from anywhere)
 set -euo pipefail
 
 SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

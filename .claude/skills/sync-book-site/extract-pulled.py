@@ -8,7 +8,7 @@ were persisted to a tool-results/<toolu>.txt file. Keeps the freshest pull per
 path (last occurrence wins). No hand-retyping = no corruption risk on a live site.
 
 Usage:
-    python3 .claude/skills/sync-site/extract-pulled.py [path/to/session.jsonl]
+    python3 .claude/skills/sync-book-site/extract-pulled.py [path/to/session.jsonl]
 
 If no transcript is given, auto-discovers the most recently modified *.jsonl under
 ~/.claude/projects/<cwd-encoded>/ (= the current session). Run from the repo root.

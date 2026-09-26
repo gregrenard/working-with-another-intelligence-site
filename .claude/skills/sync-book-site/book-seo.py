@@ -39,8 +39,8 @@ EN = {
     "tw_desc": "An AI Reality Test and Management Reality Check. By Marylène Delbourg-Delphis and Gregory Renard.",
 }
 FR = {
-    "title": "Travailler avec une autre intelligence — L'IA à l'épreuve du réel, le management à l'épreuve de l'IA",
-    "desc": "Le livre de Marylène Delbourg-Delphis et Gregory Renard : deux ans au cœur d'un grand groupe industriel européen qui a fait fonctionner l'IA pour de vrai, et ce que cela change pour le management. Ebook et livre audio.",
+    "title": "Travailler avec une autre intelligence — L'IA à l'épreuve du réel",
+    "desc": "Le livre de Marylène Delbourg-Delphis et Gregory Renard : deux ans dans un grand groupe européen qui a fait fonctionner l'IA, et ce que cela change pour le management.",
     "og_desc": "Deux ans au cœur d'un grand groupe industriel européen qui a fait fonctionner l'IA pour de vrai. Par Marylène Delbourg-Delphis et Gregory Renard.",
     "tw_title": "Travailler avec une autre intelligence",
     "tw_desc": "L'IA à l'épreuve du réel, le management à l'épreuve de l'IA. Par Marylène Delbourg-Delphis et Gregory Renard.",

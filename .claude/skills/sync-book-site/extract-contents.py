@@ -11,7 +11,7 @@ leaves no FR copy on disk, so each page is re-rendered from a throwaway sibling
 whose DCLogic state starts at lang:'fr'. The FR files carry no TITLE/META line
 because <title> and <meta description> stay English on the FR toggle.
 
-Usage:  python3 .claude/skills/sync-site/extract-contents.py   (from repo root)
+Usage:  python3 .claude/skills/sync-book-site/extract-contents.py   (from repo root)
 """
 import os, re, sys, html, threading
 from functools import partial

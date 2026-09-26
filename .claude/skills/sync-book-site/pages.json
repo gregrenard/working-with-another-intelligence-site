@@ -15,6 +15,7 @@
   ],
   "site": "https://working-with-another-intelligence.com",
   "draft": true,
+  "preview_url": "https://gregrenard.github.io/working-with-another-intelligence-site",
   "_draft_note": "Draft phase: served from gregrenard.github.io/working-with-another-intelligence-site/ with NO custom domain. While true: no CNAME file (Pages would bind the unconnected domain), pages are noindex. Set to false + restore CNAME when the domain is connected.",
   "pages": [
     { "design": "Working with Another Intelligence.dc.html", "slug": "index", "role": "home" },

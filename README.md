@@ -8,11 +8,20 @@ This is a **new, standalone site**, not gregory-renard.com. It links out to each
 
 **Claude Design is the source of truth**, not this repo. The page is authored in the Claude Design project "Site du livre « Working with Another Intelligence »" (projectId `7daaebae-3d63-4762-8e3c-099fed1efa18`). This repo holds the **deployed output**: the Design page plus deploy-only transforms Claude Design cannot express (clean root URL, static SEO head, static pre-render for no-JS crawlers).
 
-**Never edit `index.html` by hand.** The next sync overwrites it. Content changes go in Claude Design; deploy behaviour goes in `.claude/skills/sync-site/`.
+**Never edit `index.html` by hand.** The next sync overwrites it. Content changes go in Claude Design; deploy behaviour goes in `.claude/skills/sync-book-site/`.
 
 ## Updating the site
 
-Run the `/sync-site` skill (`.claude/skills/sync-site/SKILL.md`). It pulls the page from Claude Design, re-applies every transform, runs the verify gates, and commits. **Pushing needs an explicit go each time.**
+Run the `sync-book-site` skill (`.claude/skills/sync-book-site/SKILL.md`), e.g. « mets à jour le site du livre ». It runs end to end with no approval stop:
+
+1. pull from Claude Design;
+2. re-apply every transform;
+3. run the gates: layout 390/768/1440 × EN/FR, languages, SEO, LLM-SEO, guardrails;
+4. commit, then push if no blocking gate failed;
+5. verify the live site;
+6. end with a debrief summary.
+
+Standing push authorization for this repo only (Gregory, 2026-09-26).
 
 ## Structure
 
@@ -22,12 +31,17 @@ Run the `/sync-site` skill (`.claude/skills/sync-site/SKILL.md`). It pulls the p
 | `support.js` | The Claude Design runtime (vendored, generated, never edit) |
 | `assets/` | Author portraits (full-resolution originals; Design copies cannot be pulled over 256 KiB) |
 | `CNAME`, `robots.txt`, `sitemap.xml`, `llms.txt`, `404.html` | Repo-only files; a sync must never clobber them. `llms.txt` is hand-written |
-| `.claude/skills/sync-site/` | The sync pipeline: `pages.json` (the only page list), `deploy.sh`, `verify.sh`, `prerender.py`… |
+| `fr.html` | Generated: the French URL `/fr` (book-seo.py) |
+| `.claude/skills/sync-book-site/` | The sync pipeline: `pages.json` (the only page list), `deploy.sh`, `verify.sh` (gates a–m), `check-layout.py`, `check-seo.py`, `verify-live.sh`… |
+
+## Current mode: draft
+
+Served without a custom domain at https://gregrenard.github.io/working-with-another-intelligence-site/ (FR: `/fr`), noindex, no `CNAME` (`"draft": true` in `pages.json`). To launch: `"draft": false`, restore `CNAME`, redeploy, point the DNS.
 
 ## Before launch
 
 - **Forms are not wired.** The three forms (free extract, reserve, invite) send nothing yet (verify gate (j)). See `SKILL.md` → "Forms".
-- **GitHub repository:** to be created under `gregrenard`, with Pages enabled and the custom domain pointed at it. The Design project's `github.md` still points at gregory-renard-site: update it there.
+- **Design `github.md`** still points at gregory-renard-site: update it in Claude Design.
 
 ## Preview locally
 
