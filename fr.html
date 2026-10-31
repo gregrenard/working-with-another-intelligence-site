@@ -36,7 +36,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 [id]{scroll-margin-top:96px}
 body{margin:0;background:#FAF7EF;color:#172139;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:#7A5E14;text-underline-offset:3px}
-a:hover{color:#A8322A}
+a:hover{color:#CF132F}
 ::selection{background:rgba(148,115,27,0.26);color:#172139}
 :focus-visible{outline:2px solid #28344F;outline-offset:3px}
 input,button{font:inherit}
@@ -105,7 +105,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 [id]{scroll-margin-top:96px}
 body{margin:0;background:#FAF7EF;color:#172139;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:#7A5E14;text-underline-offset:3px}
-a:hover{color:#A8322A}
+a:hover{color:#CF132F}
 ::selection{background:rgba(148,115,27,0.26);color:#172139}
 :focus-visible{outline:2px solid #28344F;outline-offset:3px}
 input,button{font:inherit}
@@ -140,7 +140,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
 
 <header style="position:sticky;top:0;z-index:60;background:rgba(250,247,239,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E3DCCB">
   <nav class="wa-pad" aria-label="Main" style="max-width:1240px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:24px">
-    <a href="#top" style="margin-right:auto;text-decoration:none;display:flex;flex-direction:column;font-family:'Oswald',sans-serif;font-weight:700;color:#A8322A;font-size:15px;line-height:1.02;letter-spacing:0.04em;text-transform:uppercase">
+    <a href="#top" style="margin-right:auto;text-decoration:none;display:flex;flex-direction:column;font-family:'Oswald',sans-serif;font-weight:700;color:#CF132F;font-size:15px;line-height:1.02;letter-spacing:0.04em;text-transform:uppercase">
       <span>Working with</span><span>Another Intelligence</span>
     </a>
     <a class="wa-navlink" href="#book" style="font-size:14px;color:#3E4557;text-decoration:none">{{ t.nav.book }}</a>
@@ -150,7 +150,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
     <a class="wa-navlink" href="#soi" style="font-size:14px;color:#3E4557;text-decoration:none">System of Intelligence</a>
     <a class="wa-navlink" href="#press" style="font-size:14px;color:#3E4557;text-decoration:none">{{ t.nav.press }}</a>
     <button type="button" onClick="{{ toggleLang }}" aria-label="{{ t.langAria }}" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#172139;background:rgba(148,115,27,0.16);border:1px solid rgba(148,115,27,0.42);border-radius:100px;padding:8px 13px;cursor:pointer;min-height:36px">{{ langLabel }}</button>
-    <a class="wa-cta-nav" href="#buy" style="background:#A8322A;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:3px;white-space:nowrap" style-hover="background:#8F2A23;color:#FFFFFF">{{ t.navBuy }}</a>
+    <a class="wa-cta-nav" href="#buy" style="background:#CF132F;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:3px;white-space:nowrap" style-hover="background:#A80F26;color:#FFFFFF">{{ t.navBuy }}</a>
     <label for="wa-nav-toggle" class="wa-burger" aria-label="Menu">☰</label>
   </nav>
   <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-hidden="true">
@@ -181,7 +181,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
   <div class="wa-pad" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(24px,3.5vw,48px) 32px clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));column-gap:clamp(40px,6vw,88px);row-gap:28px;align-items:center">
     <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:18px;min-width:0;container-type:inline-size">
       <p style="margin:0;display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#7A5E14"><span style="width:32px;height:1px;background:#94731B;flex:none"></span><span style="font-size:clamp(9px,1vw,12px);letter-spacing:0.1em;white-space:nowrap">{{ t.heroEyebrow }}</span></p>
-      <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.5rem,4.1cqi,3.4rem);line-height:1.08;letter-spacing:-0.02em;display:flex;flex-direction:column;gap:4px;white-space:nowrap"><span>{{ punchA }}</span><span style="color:#A8322A;transition:opacity .45s ease;opacity:{{ punchOpacity }}" onMouseEnter="{{ punchPause }}" onMouseLeave="{{ punchResume }}">{{ punchB }}</span></h1>
+      <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.5rem,4.1cqi,3.4rem);line-height:1.08;letter-spacing:-0.02em;display:flex;flex-direction:column;gap:4px;white-space:nowrap"><span>{{ punchA }}</span><span style="color:#CF132F;transition:opacity .45s ease;opacity:{{ punchOpacity }}" onMouseEnter="{{ punchPause }}" onMouseLeave="{{ punchResume }}">{{ punchB }}</span></h1>
       <div style="display:flex;align-items:center;gap:4px;margin:-8px 0 0 -7px">
         <sc-for list="{{ punchDots }}" as="d" hint-placeholder-count="4">
           <button type="button" onClick="{{ d.go }}" aria-label="{{ d.label }}" aria-current="{{ d.current }}" style="width:24px;height:24px;padding:0;border:0;background:transparent;cursor:pointer;display:grid;place-items:center"><span style="display:block;width:{{ d.size }};height:8px;border-radius:4px;background:{{ d.bg }};transition:width .3s,background .3s"></span></button>
@@ -195,17 +195,17 @@ details[open] .wa-chev{transform:rotate(45deg)}
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));column-gap:28px">
           <sc-for list="{{ t.gains }}" as="g" hint-placeholder-count="4">
             <div style="display:grid;grid-template-columns:24px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #E3DCCB">
-              <span aria-hidden="true" style="width:22px;height:22px;margin-top:1px;border-radius:50%;background:#A8322A;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">✓</span>
+              <span aria-hidden="true" style="width:22px;height:22px;margin-top:1px;border-radius:50%;background:#CF132F;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">✓</span>
               <p style="margin:0;font-size:15.5px;line-height:1.45;color:#3E4557"><strong style="display:block;color:#172139;font-weight:700">{{ g.h }}</strong>{{ g.p }}</p>
             </div>
           </sc-for>
         </div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px">
-        <a href="#buy" style="background:#A8322A;color:#FFFFFF;text-decoration:none;font-weight:600;padding:15px 24px;border-radius:3px" style-hover="background:#8F2A23;color:#FFFFFF">{{ t.heroBuy }}</a>
+        <a href="#buy" style="background:#CF132F;color:#FFFFFF;text-decoration:none;font-weight:600;padding:15px 24px;border-radius:3px" style-hover="background:#A80F26;color:#FFFFFF">{{ t.heroBuy }}</a>
         <a href="#extract" style="background:#FAF7EF;color:#172139;text-decoration:none;font-weight:600;padding:14px 22px;border:1px solid #172139;border-radius:3px" style-hover="background:#172139;color:#FAF7EF">{{ t.heroExtract }}</a>
       </div>
-      <p style="margin:0;font-size:14px;color:#6C7180;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.authorsLine }} · {{ t.heroMeta }} · <span style="color:#A8322A">{{ t.forewordLine }}</span></p>
+      <p style="margin:0;font-size:14px;color:#6C7180;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.authorsLine }} · {{ t.heroMeta }} · <span style="color:#CF132F">{{ t.forewordLine }}</span></p>
     </div>
 
     <div style="display:flex;justify-content:flex-end;align-self:start;padding-right:14px">
@@ -283,7 +283,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
               <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:1.3rem;line-height:1.25;color:#172139">{{ c.h }}</h3>
             </div>
             <div style="padding:16px 22px 20px;display:grid;grid-template-columns:22px 1fr;gap:10px;flex:1">
-              <span aria-hidden="true" style="width:20px;height:20px;margin-top:2px;border-radius:50%;background:#A8322A;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">✓</span>
+              <span aria-hidden="true" style="width:20px;height:20px;margin-top:2px;border-radius:50%;background:#CF132F;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">✓</span>
               <p style="margin:0;font-size:15.5px;line-height:1.5;color:#3E4557">{{ c.p }}</p>
             </div>
             <p style="margin:0;padding:10px 22px;background:#F1ECE1;font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A5E14">{{ c.ch }}</p>
@@ -291,20 +291,20 @@ details[open] .wa-chev{transform:rotate(45deg)}
         </sc-for>
       </div>
     </div>
-    <p style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.25">{{ t.sovA }} <span style="color:#A8322A">{{ t.sovB }}</span></p>
+    <p style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.25">{{ t.sovA }} <span style="color:#CF132F">{{ t.sovB }}</span></p>
   </div>
 </section>
 
 <section class="wa-pad" style="padding:clamp(48px,5.5vw,76px) 32px">
   <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,6vw,80px)">
     <div style="display:flex;flex-direction:column;gap:20px">
-      <p style="margin:0;display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A8322A"><span style="width:32px;height:2px;background:#A8322A"></span>{{ t.p1Eyebrow }}</p>
+      <p style="margin:0;display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#CF132F"><span style="width:32px;height:2px;background:#CF132F"></span>{{ t.p1Eyebrow }}</p>
       <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.12">{{ t.p1Title }} <em style="color:#3E4557">{{ t.p1Sub }}</em></h2>
       <p style="margin:0;font-size:1.125rem;line-height:1.65;color:#3E4557;text-wrap:pretty">{{ t.p1Text }}</p>
     </div>
     <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid #E3DCCB;align-self:end">
       <sc-for list="{{ t.p1Bullets }}" as="b" hint-placeholder-count="5">
-        <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:18px 0;border-bottom:1px solid #E3DCCB;line-height:1.55"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8322A;padding-top:3px">→</span><span>{{ b }}</span></li>
+        <li style="display:grid;grid-template-columns:28px 1fr;gap:10px;padding:18px 0;border-bottom:1px solid #E3DCCB;line-height:1.55"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#CF132F;padding-top:3px">→</span><span>{{ b }}</span></li>
       </sc-for>
     </ul>
   </div>
@@ -333,7 +333,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));column-gap:48px">
       <sc-for list="{{ t.numbers }}" as="n" hint-placeholder-count="6">
         <div style="padding:28px 0;border-top:1px solid #172139;display:flex;flex-direction:column;gap:10px">
-          <span style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.4rem,3.8vw,3.4rem);line-height:1;color:#A8322A;font-variant-numeric:tabular-nums;white-space:nowrap">{{ n.v }}</span>
+          <span style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.4rem,3.8vw,3.4rem);line-height:1;color:#CF132F;font-variant-numeric:tabular-nums;white-space:nowrap">{{ n.v }}</span>
           <span style="line-height:1.5;color:#3E4557;max-width:22em">{{ n.l }}</span>
         </div>
       </sc-for>
@@ -353,11 +353,11 @@ details[open] .wa-chev{transform:rotate(45deg)}
       <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.12">{{ t.chapTitle }}</h2>
     </div>
     <div style="display:flex;flex-direction:column">
-      <h3 style="margin:0 0 8px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.05em;text-transform:uppercase;color:#A8322A">{{ t.part1Label }} <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:14px;letter-spacing:0;text-transform:none;color:#6C7180">Gregory Renard</span></h3>
+      <h3 style="margin:0 0 8px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;font-family:'Oswald',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.05em;text-transform:uppercase;color:#CF132F">{{ t.part1Label }} <span style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:14px;letter-spacing:0;text-transform:none;color:#6C7180">Gregory Renard</span></h3>
       <sc-for list="{{ t.part1 }}" as="c" hint-placeholder-count="9">
         <details style="border-bottom:1px solid #E3DCCB">
           <summary style="display:grid;grid-template-columns:48px 1fr 24px;gap:12px;align-items:baseline;padding:18px 0">
-            <span style="font-family:'Oswald',sans-serif;font-weight:500;font-size:20px;color:#A8322A">{{ c.n }}</span>
+            <span style="font-family:'Oswald',sans-serif;font-weight:500;font-size:20px;color:#CF132F">{{ c.n }}</span>
             <span style="font-family:'Newsreader',serif;font-weight:500;font-size:1.22rem;line-height:1.3">{{ c.t }}</span>
             <span class="wa-chev" style="font-size:22px;line-height:1;color:#94731B;transition:transform .2s">+</span>
           </summary>
@@ -405,15 +405,15 @@ details[open] .wa-chev{transform:rotate(45deg)}
           <a href="https://www.delbourg-delphis.com/" style="font-weight:600;color:#28344F">delbourg-delphis.com ↗</a>
         </div>
       </article>
-      <article style="background:#FAF7EF;border:1px solid #E3DCCB;border-top:4px solid #A8322A;display:flex;flex-direction:column">
+      <article style="background:#FAF7EF;border:1px solid #E3DCCB;border-top:4px solid #CF132F;display:flex;flex-direction:column">
         <div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#172139">
           <img src="assets/greg-renard.png" alt="Gregory Renard" style="width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block">
         </div>
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
-          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:1.6rem;line-height:1.2">Gregory Renard, <em style="color:#A8322A">{{ t.grTag }}</em></h3>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:1.6rem;line-height:1.2">Gregory Renard, <em style="color:#CF132F">{{ t.grTag }}</em></h3>
           <p style="margin:0;line-height:1.6;color:#3E4557;flex:1">{{ t.grBio }}</p>
-          <p style="margin:0;padding-left:16px;border-left:2px solid #A8322A;font-family:'Newsreader',serif;font-style:italic;font-size:1.1rem;line-height:1.45">{{ t.grQuote }}</p>
-          <a href="https://gregory-renard.com" style="font-weight:600;color:#A8322A">gregory-renard.com ↗</a>
+          <p style="margin:0;padding-left:16px;border-left:2px solid #CF132F;font-family:'Newsreader',serif;font-style:italic;font-size:1.1rem;line-height:1.45">{{ t.grQuote }}</p>
+          <a href="https://gregory-renard.com" style="font-weight:600;color:#CF132F">gregory-renard.com ↗</a>
         </div>
       </article>
     </div>
@@ -462,10 +462,10 @@ details[open] .wa-chev{transform:rotate(45deg)}
             <input required="" type="email" name="email" autocomplete="email" style="padding:13px 14px;border:1px solid #BFB6A3;background:#FFFFFF;color:#172139;font-size:16px;border-radius:3px">
           </label>
           <label style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-size:14px;line-height:1.5;color:#3E4557">
-            <input type="checkbox" name="newsletter" style="margin:3px 0 0;width:18px;height:18px;accent-color:#A8322A">
+            <input type="checkbox" name="newsletter" style="margin:3px 0 0;width:18px;height:18px;accent-color:#CF132F">
             <span>{{ t.fOptin }}</span>
           </label>
-          <button type="submit" style="background:#A8322A;color:#FFFFFF;border:0;padding:15px 22px;font-weight:600;font-size:16px;cursor:pointer;border-radius:3px" style-hover="background:#8F2A23">{{ t.fSubmit }}</button>
+          <button type="submit" style="background:#CF132F;color:#FFFFFF;border:0;padding:15px 22px;font-weight:600;font-size:16px;cursor:pointer;border-radius:3px" style-hover="background:#A80F26">{{ t.fSubmit }}</button>
           <p style="margin:0;font-size:13px;line-height:1.5;color:#6C7180">{{ t.fGdpr }} <a href="#privacy">{{ t.privacy }}</a></p>
         </form>
       </sc-if>
@@ -478,7 +478,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
             <a href="#extract" style="border:1px solid #172139;color:#172139;text-decoration:none;font-weight:600;padding:11px 16px">EPUB</a>
           </div>
           <p style="margin:0;line-height:1.55;color:#3E4557">{{ t.share }}</p>
-          <a href="#buy" style="align-self:flex-start;background:#A8322A;color:#FFFFFF;text-decoration:none;font-weight:600;padding:13px 20px;border-radius:3px">{{ t.heroBuy }}</a>
+          <a href="#buy" style="align-self:flex-start;background:#CF132F;color:#FFFFFF;text-decoration:none;font-weight:600;padding:13px 20px;border-radius:3px">{{ t.heroBuy }}</a>
         </div>
       </sc-if>
     </div>
@@ -563,7 +563,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
             <legend style="padding:0;margin-bottom:10px;font-size:14px;font-weight:600">{{ t.fFormat }}</legend>
             <div style="display:flex;flex-wrap:wrap;gap:10px">
               <sc-for list="{{ formats }}" as="f" hint-placeholder-count="3">
-                <label style="display:flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid #172139;border-radius:100px;font-size:15px;cursor:pointer"><input type="radio" name="format" value="{{ f.v }}" style="accent-color:#A8322A;margin:0">{{ f.l }}</label>
+                <label style="display:flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid #172139;border-radius:100px;font-size:15px;cursor:pointer"><input type="radio" name="format" value="{{ f.v }}" style="accent-color:#CF132F;margin:0">{{ f.l }}</label>
               </sc-for>
             </div>
           </fieldset>
@@ -571,16 +571,16 @@ details[open] .wa-chev{transform:rotate(45deg)}
             <legend style="padding:0;margin-bottom:10px;font-size:14px;font-weight:600">{{ t.fLang }}</legend>
             <div style="display:flex;flex-wrap:wrap;gap:10px">
               <sc-for list="{{ langs }}" as="l" hint-placeholder-count="2">
-                <label style="display:flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid #172139;border-radius:100px;font-size:15px;cursor:pointer"><input type="radio" name="book_lang" value="{{ l.v }}" style="accent-color:#A8322A;margin:0">{{ l.l }}</label>
+                <label style="display:flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid #172139;border-radius:100px;font-size:15px;cursor:pointer"><input type="radio" name="book_lang" value="{{ l.v }}" style="accent-color:#CF132F;margin:0">{{ l.l }}</label>
               </sc-for>
             </div>
           </fieldset>
           <label style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-size:14px;line-height:1.5;color:#3E4557">
-            <input type="checkbox" name="newsletter" style="margin:3px 0 0;width:18px;height:18px;accent-color:#A8322A">
+            <input type="checkbox" name="newsletter" style="margin:3px 0 0;width:18px;height:18px;accent-color:#CF132F">
             <span>{{ t.fOptin }}</span>
           </label>
           <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-            <button type="submit" style="background:#A8322A;color:#FFFFFF;border:0;padding:15px 26px;font-weight:600;font-size:16px;cursor:pointer;border-radius:3px" style-hover="background:#8F2A23">{{ t.reserveSubmit }}</button>
+            <button type="submit" style="background:#CF132F;color:#FFFFFF;border:0;padding:15px 26px;font-weight:600;font-size:16px;cursor:pointer;border-radius:3px" style-hover="background:#A80F26">{{ t.reserveSubmit }}</button>
             <p style="margin:0;font-size:13px;line-height:1.5;color:#6C7180;flex:1;min-width:220px">{{ t.reserveGdpr }} <a href="#privacy">{{ t.privacy }}</a></p>
           </div>
         </form>
@@ -599,11 +599,11 @@ details[open] .wa-chev{transform:rotate(45deg)}
 
 <sc-if value="{{ showGift }}" hint-placeholder-val="{{ false }}">
   <section id="gift" class="wa-pad" style="padding:0 32px clamp(48px,5.5vw,76px)">
-    <div style="max-width:1240px;margin:0 auto;background:#A8322A;color:#FFFFFF;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px;align-items:center">
+    <div style="max-width:1240px;margin:0 auto;background:#CF132F;color:#FFFFFF;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px;align-items:center">
       <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.15;text-wrap:balance">{{ t.giftTitle }}</h2>
       <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
         <p style="margin:0;font-size:1.1rem;line-height:1.6">{{ t.giftText }}</p>
-        <a href="#buy" style="background:#FFFFFF;color:#A8322A;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:3px">{{ t.giftBtn }}</a>
+        <a href="#buy" style="background:#FFFFFF;color:#CF132F;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:3px">{{ t.giftBtn }}</a>
       </div>
     </div>
   </section>
@@ -645,7 +645,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
             <legend style="padding:0;margin-bottom:8px;font-size:14px;font-weight:600">{{ t.fFormatReq }}</legend>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
               <sc-for list="{{ t.inviteFormats }}" as="f" hint-placeholder-count="4">
-                <label style="display:flex;align-items:center;gap:8px;min-height:40px;padding:8px 14px;border:1px solid #172139;border-radius:100px;font-size:14px;cursor:pointer"><input type="radio" name="format" value="{{ f.v }}" style="accent-color:#A8322A;margin:0">{{ f.l }}</label>
+                <label style="display:flex;align-items:center;gap:8px;min-height:40px;padding:8px 14px;border:1px solid #172139;border-radius:100px;font-size:14px;cursor:pointer"><input type="radio" name="format" value="{{ f.v }}" style="accent-color:#CF132F;margin:0">{{ f.l }}</label>
               </sc-for>
             </div>
           </fieldset>
@@ -653,7 +653,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
             <legend style="padding:0;margin-bottom:8px;font-size:14px;font-weight:600">{{ t.fWho }}</legend>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
               <sc-for list="{{ t.inviteWho }}" as="w" hint-placeholder-count="3">
-                <label style="display:flex;align-items:center;gap:8px;min-height:40px;padding:8px 14px;border:1px solid #172139;border-radius:100px;font-size:14px;cursor:pointer"><input type="radio" name="who" value="{{ w.v }}" style="accent-color:#A8322A;margin:0">{{ w.l }}</label>
+                <label style="display:flex;align-items:center;gap:8px;min-height:40px;padding:8px 14px;border:1px solid #172139;border-radius:100px;font-size:14px;cursor:pointer"><input type="radio" name="who" value="{{ w.v }}" style="accent-color:#CF132F;margin:0">{{ w.l }}</label>
               </sc-for>
             </div>
           </fieldset>
@@ -736,7 +736,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
 </footer>
 
 <div class="wa-sticky-buy">
-  <a href="#buy" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;background:#A8322A;color:#FFFFFF;text-decoration:none;font-weight:600;border-radius:3px">{{ stickyBuy }}</a>
+  <a href="#buy" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;background:#CF132F;color:#FFFFFF;text-decoration:none;font-weight:600;border-radius:3px">{{ stickyBuy }}</a>
 </div>
 
 </div>
@@ -787,7 +787,7 @@ class Component extends DCLogic {
     const rotating = this.props.punchRotate ?? true;
     const lines = rotating ? T.punchRotate : [punch[1]];
     const pi = this.state.punch % lines.length;
-    const punchDots = rotating ? lines.map((x, i) => ({ go: () => this.goPunch(i, true), label: (lang === 'fr' ? 'Accroche ' : 'Line ') + (i + 1), current: i === pi, bg: i === pi ? '#A8322A' : '#CFC6B6', size: i === pi ? '22px' : '8px' })) : [];
+    const punchDots = rotating ? lines.map((x, i) => ({ go: () => this.goPunch(i, true), label: (lang === 'fr' ? 'Accroche ' : 'Line ') + (i + 1), current: i === pi, bg: i === pi ? '#CF132F' : '#CFC6B6', size: i === pi ? '22px' : '8px' })) : [];
     const quotes = T.quotes;
     const q = this.state.q % quotes.length;
     const setQ = i => this.setState({ q: (i + quotes.length) % quotes.length });
@@ -827,7 +827,7 @@ class Component extends DCLogic {
       quoteCounter: T.quotesLabel + ' · ' + String(q + 1).padStart(2, '0') + ' / ' + String(quotes.length).padStart(2, '0'),
       prevQuote: () => setQ(q - 1),
       nextQuote: () => setQ(q + 1),
-      quoteDots: quotes.map((_, i) => ({ label: String(i + 1), bg: i === q ? '#A8322A' : '#E3DCCB', go: () => setQ(i) })),
+      quoteDots: quotes.map((_, i) => ({ label: String(i + 1), bg: i === q ? '#CF132F' : '#E3DCCB', go: () => setQ(i) })),
       notSubmitted: !this.state.submitted,
       submitted: this.state.submitted,
       firstName: this.state.firstName,
@@ -875,10 +875,10 @@ class Component extends DCLogic {
       bookTitle: 'Skip two years of trial and error. Keep the results.',
       bookText: 'Most companies will spend years and millions learning what ACME learned the hard way. This book hands you the whole playbook: what worked, what failed, the real numbers, and the management questions to settle before you spend a single euro. Read it in a weekend. Apply it on Monday.',
       bookFacts: [
-        { v: '2 years', l: 'of real deployment, compressed into one read', c: '#A8322A' },
-        { v: '16 chapters', l: 'in two parts: building intelligence on your own terms, then the management reality check', c: '#A8322A' },
-        { v: '8,500 h', l: 'returned in one year: the ROI case for your board', c: '#A8322A' },
-        { v: 'No one replaced', l: 'the goal is to free people for more valuable work', c: '#A8322A' }
+        { v: '2 years', l: 'of real deployment, compressed into one read', c: '#CF132F' },
+        { v: '16 chapters', l: 'in two parts: building intelligence on your own terms, then the management reality check', c: '#CF132F' },
+        { v: '8,500 h', l: 'returned in one year: the ROI case for your board', c: '#CF132F' },
+        { v: 'No one replaced', l: 'the goal is to free people for more valuable work', c: '#CF132F' }
       ],
       why: 'We believe responsible AI is not only decided in Brussels or in Washington. It is built, or not, inside companies, one decision at a time. We believe every organization must remain the owner of its own intelligence, and that AI, done well, does not replace human expertise: it reveals it. Some tasks, yes, will disappear. All the more reason to talk about it openly.',
       whyLine: '“What can I do, where I stand?” Camus and Arendt’s question is now every leader’s question in the face of AI.',
@@ -1096,10 +1096,10 @@ class Component extends DCLogic {
       bookTitle: 'Économisez deux ans d’essais et d’erreurs. Gardez les résultats.',
       bookText: 'La plupart des entreprises vont dépenser des années et des millions pour apprendre ce qu’ACME a appris à la dure. Ce livre vous donne toute la méthode : ce qui a marché, ce qui a échoué, les vrais chiffres, et les questions de management à trancher avant de dépenser le moindre euro. Lisez-le ce week-end. Appliquez-le lundi.',
       bookFacts: [
-        { v: '2 ans', l: 'de déploiement réel, condensés en une lecture', c: '#A8322A' },
-        { v: '16 chapitres', l: 'en deux parties : bâtir son intelligence à ses propres conditions, puis l’épreuve de vérité du management', c: '#A8322A' },
-        { v: '8 500 h', l: 'rendues en un an : l’argumentaire ROI pour votre board', c: '#A8322A' },
-        { v: 'Personne de remplacé', l: 'le but : libérer les gens pour un travail plus utile', c: '#A8322A' }
+        { v: '2 ans', l: 'de déploiement réel, condensés en une lecture', c: '#CF132F' },
+        { v: '16 chapitres', l: 'en deux parties : bâtir son intelligence à ses propres conditions, puis l’épreuve de vérité du management', c: '#CF132F' },
+        { v: '8 500 h', l: 'rendues en un an : l’argumentaire ROI pour votre board', c: '#CF132F' },
+        { v: 'Personne de remplacé', l: 'le but : libérer les gens pour un travail plus utile', c: '#CF132F' }
       ],
       why: 'Nous croyons que l’IA responsable ne se décide pas seulement à Bruxelles ou à Washington. Elle se construit, ou pas, à l’intérieur des entreprises, décision après décision. Nous croyons que chaque organisation doit rester propriétaire de sa propre intelligence, et que l’IA, bien faite, ne remplace pas l’expertise humaine : elle la révèle. Certaines tâches, oui, disparaîtront. Raison de plus pour en parler franchement.',
       whyLine: '« Qu’est-ce que je peux faire, là où je suis ? » La question de Camus et d’Arendt est aujourd’hui celle de chaque dirigeant face à l’IA.',
