@@ -32,11 +32,11 @@ SITE = "https://working-with-another-intelligence.com"
 MARK = "<!--book-seo-->"
 
 EN = {
-    "title": "Working with Another Intelligence — An AI Reality Test and Management Reality Check",
-    "desc": "A book by Marylène Delbourg-Delphis and Gregory Renard. Two years inside a European industrial group that made AI work for real, and what it changes for management.",
-    "og_desc": "Two years inside a European industrial group that made AI work for real. By Marylène Delbourg-Delphis and Gregory Renard.",
+    "title": "Working with Another Intelligence — Why AI Success Depends More on People Than Technology",
+    "desc": "Why AI success depends more on people than technology. A book by Marylene Delbourg-Delphis and Gregory Renard, foreword by Guy Kawasaki. Two years inside a European industrial group that made AI work for real.",
+    "og_desc": "Two years inside a European industrial group that made AI work for real. By Marylene Delbourg-Delphis and Gregory Renard. Foreword by Guy Kawasaki.",
     "tw_title": "Working with Another Intelligence",
-    "tw_desc": "An AI Reality Test and Management Reality Check. By Marylène Delbourg-Delphis and Gregory Renard.",
+    "tw_desc": "Why AI success depends more on people than technology. By Marylene Delbourg-Delphis and Gregory Renard. Foreword by Guy Kawasaki.",
 }
 FR = {
     "title": "Travailler avec une autre intelligence — L'IA à l'épreuve du réel",
@@ -83,6 +83,9 @@ def patch_jsonld(s):
         if data.get("@type") != "Book":
             return m.group(0)
         for a in data.get("author", []):
+            # Design sometimes drops the accent; the published author name must keep it.
+            if a.get("name") == "Marylene Delbourg-Delphis":
+                a["name"] = "Marylène Delbourg-Delphis"
             if a.get("name") == "Marylène Delbourg-Delphis":
                 a.setdefault("url", "https://www.delbourg-delphis.org/")
                 a.setdefault("sameAs", ["https://www.delbourg-delphis.org/"])
