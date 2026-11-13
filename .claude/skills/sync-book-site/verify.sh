@@ -144,6 +144,9 @@ done
 grep -q "$EP" assets/forms.js 2>/dev/null && echo "  ok: assets/forms.js carries the endpoint from site-config.json" || { echo "  BAD: assets/forms.js missing or endpoint differs from site-config.json"; fail=1; }
 [ "$(curl -s -m 20 -L "$EP")" = "Book site forms endpoint is running." ] && echo "  ok: endpoint answers (GET)" || echo "  WARN: endpoint did not answer the GET check (offline, or the deployment changed)"
 
+echo "--- (j2) no Design legal token left in the pages ---"
+if grep -qE '\{\{[A-Z_]+\}\}' index.html fr.html; then echo "  BAD: uppercase {{TOKEN}} still visible (add it to site-config.json legal): $(grep -ohE '\{\{[A-Z_]+\}\}' index.html fr.html | sort -u | tr '\n' ' ')"; fail=1; else echo "  ok: no {{TOKEN}} left"; fi
+
 echo "--- (l) layout: desktop 1440 / tablet 768 / mobile 390, EN + FR, no overflow ---"
 python3 "$SKILL_DIR/check-layout.py" || fail=1
 

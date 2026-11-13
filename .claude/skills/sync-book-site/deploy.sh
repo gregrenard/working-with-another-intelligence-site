@@ -8,7 +8,7 @@
 # to his site. The book page's three forms are wired to a Google Sheet by patch-forms.py.
 #
 # Pipeline order is critical (see SKILL.md):
-#   cp Home->index -> home-link ./ -> seo-clean-urls -> layout-fix -> book-seo (fr.html) -> patch-forms -> rename *.dc.html->*.html
+#   cp Home->index -> home-link ./ -> seo-clean-urls -> layout-fix -> book-seo (fr.html) -> patch-forms -> fill-placeholders -> rename *.dc.html->*.html
 #   (+ rm Home) -> bump sitemap -> prerender (LAST) -> verify
 #
 # Does NOT touch the permanent repo files (404.html, CNAME, robots.txt, sitemap.xml
@@ -53,6 +53,9 @@ python3 "$SKILL_DIR/book-seo.py"
 
 echo "==> 4c/6 forms: assets/forms.js + script tag in index.html and fr.html (Google Sheet endpoint)"
 python3 "$SKILL_DIR/patch-forms.py"
+
+echo "==> 4d/6 legal tokens: {{HEBERGEUR}} / {{EMAIL_PRESSE}} from site-config.json"
+python3 "$SKILL_DIR/fill-placeholders.py"
 
 echo "==> 5/6  rename *.dc.html -> *.html (+ drop redundant home source)"
 for f in $SUBPAGES; do [ -f "$f.dc.html" ] && mv "$f.dc.html" "$f.html"; done

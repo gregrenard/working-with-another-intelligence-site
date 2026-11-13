@@ -783,7 +783,7 @@ class Component extends DCLogic {
     const pre = phase === 'preorder';
     const date = this.props.releaseDate || (lang === 'fr' ? '1er décembre 2026' : '1 December 2026');
     const T = lang === 'fr' ? this.fr(date, pre) : this.en(date, pre);
-    const pressEmail = this.props.pressEmail || 'presse@working-with-another-intelligence.com';
+    const pressEmail = this.props.pressEmail || 'contact@freedom.ai';
     const hk = this.props.heroLine ?? 'sovereignty';
     const punch = T.punch[hk] || T.punch.sovereignty;
     const rotating = this.props.punchRotate ?? true;
@@ -1055,8 +1055,8 @@ class Component extends DCLogic {
         { h: 'Connect', items: [{ label: 'System of Intelligence', url: '#soi' }, { label: 'Press & talks', url: '#press' }, { label: 'Newsletter', url: '#extract' }, { label: 'Édition française', url: '?lang=fr' }] },
         { h: 'Legal', items: [{ label: 'Legal notice', url: '#legal' }, { label: 'Privacy', url: '#privacy' }, { label: 'Cookies', url: '#cookies' }] }
       ],
-      legalTitle: 'Legal notice', legalText: 'Published by Freedom.ai (www.freedom.ai). Publication directors of this site: Marylene Delbourg-Delphis & Gregory Renard. Host: {{HEBERGEUR}}. Contact: {{EMAIL_PRESSE}}.',
-      privacyTitle: 'Privacy', privacyText: 'Your email is used only to send you the extract, your reservation confirmation and, if you opted in, our letter. Processor: Brevo (EU hosting). You can unsubscribe in one click and request deletion at any time at {{EMAIL_PRESSE}}.',
+      legalTitle: 'Legal notice', legalText: 'Published by Freedom.ai (www.freedom.ai). Publication directors of this site: Marylene Delbourg-Delphis & Gregory Renard. Host: Freedom.ai Consulting LLC. Contact: contact@freedom.ai.',
+      privacyTitle: 'Privacy', privacyText: 'Your email is used only to send you the extract, your reservation confirmation and, if you opted in, our letter. Processor: Brevo (EU hosting). You can unsubscribe in one click and request deletion at any time at contact@freedom.ai.',
       cookiesTitle: 'Cookies', cookiesText: 'This site uses no advertising cookies. Audience measurement is done with Plausible, without cookies or personal data, so no consent banner is needed.',
       acmeNote: 'ACME is a pseudonym. Figures come from the account.'
     };
@@ -1276,8 +1276,8 @@ class Component extends DCLogic {
         { h: 'Échanger', items: [{ label: 'System of Intelligence', url: '#soi' }, { label: 'Presse & conférences', url: '#press' }, { label: 'Newsletter', url: '#extract' }, { label: 'English edition', url: '?lang=en' }] },
         { h: 'Légal', items: [{ label: 'Mentions légales', url: '#legal' }, { label: 'Confidentialité', url: '#privacy' }, { label: 'Gestion des cookies', url: '#cookies' }] }
       ],
-      legalTitle: 'Mentions légales', legalText: 'Publié par Freedom.ai (www.freedom.ai). Directeurs de la publication de ce site : Marylène Delbourg-Delphis & Gregory Renard. Hébergeur : {{HEBERGEUR}}. Contact : {{EMAIL_PRESSE}}.',
-      privacyTitle: 'Confidentialité', privacyText: 'Votre email sert uniquement à vous envoyer l’extrait, la confirmation de votre réservation et, si vous l’avez accepté, notre lettre. Sous-traitant : Brevo (hébergement UE). Désinscription en un clic, suppression sur demande à {{EMAIL_PRESSE}}.',
+      legalTitle: 'Mentions légales', legalText: 'Publié par Freedom.ai (www.freedom.ai). Directeurs de la publication de ce site : Marylène Delbourg-Delphis & Gregory Renard. Hébergeur : Freedom.ai Consulting LLC. Contact : contact@freedom.ai.',
+      privacyTitle: 'Confidentialité', privacyText: 'Votre email sert uniquement à vous envoyer l’extrait, la confirmation de votre réservation et, si vous l’avez accepté, notre lettre. Sous-traitant : Brevo (hébergement UE). Désinscription en un clic, suppression sur demande à contact@freedom.ai.',
       cookiesTitle: 'Cookies', cookiesText: 'Ce site n’utilise aucun cookie publicitaire. La mesure d’audience est faite avec Plausible, sans cookie ni donnée personnelle : aucun bandeau de consentement n’est nécessaire.',
       acmeNote: 'ACME est un nom d’emprunt. Les chiffres cités sont issus du récit.'
     };
