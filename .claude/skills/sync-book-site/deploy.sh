@@ -5,10 +5,10 @@
 # Adapted from gregory-renard-site (see its ADAPT-THIS-SETUP.md). Stages kept: the
 # structural ones (1, 2, 4, 5, 6, 7). Dropped: Greg's contact-form patch, his SEO
 # enrichment, his hero-wrap CSS fix and his gallery .png->.jpg rename — all specific
-# to his site. The book page's three forms are NOT wired yet (see SKILL.md, "Forms").
+# to his site. The book page's three forms are wired to a Google Sheet by patch-forms.py.
 #
 # Pipeline order is critical (see SKILL.md):
-#   cp Home->index -> home-link ./ -> seo-clean-urls -> layout-fix -> book-seo (fr.html) -> rename *.dc.html->*.html
+#   cp Home->index -> home-link ./ -> seo-clean-urls -> layout-fix -> book-seo (fr.html) -> patch-forms -> rename *.dc.html->*.html
 #   (+ rm Home) -> bump sitemap -> prerender (LAST) -> verify
 #
 # Does NOT touch the permanent repo files (404.html, CNAME, robots.txt, sitemap.xml
@@ -41,7 +41,7 @@ echo "==> 2/6  rewrite home link -> ./  (href + JS url forms, quote-anchored)"
 sed -i '' "s|\"$HOME_RE\"|\"./\"|g" "${DC_FILES[@]}" index.html
 sed -i '' "s|'$HOME_RE'|'./'|g"     "${DC_FILES[@]}" index.html
 
-echo "==> 3/6  forms: NOT wired (no endpoint yet) — see SKILL.md 'Forms'"
+echo "==> 3/6  forms: wired after book-seo (stage 4c)"
 
 echo "==> 4/6  clean URLs + static SEO head"
 python3 "$SKILL_DIR/seo-clean-urls.py"
@@ -51,6 +51,9 @@ python3 "$SKILL_DIR/layout-fix.py"
 
 echo "==> 4b/6 book SEO: favicon + theme-color, JSON-LD, real French URL /fr (fr.html), language routing"
 python3 "$SKILL_DIR/book-seo.py"
+
+echo "==> 4c/6 forms: assets/forms.js + script tag in index.html and fr.html (Google Sheet endpoint)"
+python3 "$SKILL_DIR/patch-forms.py"
 
 echo "==> 5/6  rename *.dc.html -> *.html (+ drop redundant home source)"
 for f in $SUBPAGES; do [ -f "$f.dc.html" ] && mv "$f.dc.html" "$f.html"; done

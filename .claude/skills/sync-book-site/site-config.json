@@ -1,0 +1,5 @@
+{
+  "_comment": "Deploy-time settings read by patch-forms.py and verify.sh. formEndpoint: the /exec URL of the Google Apps Script web app (source: forms-apps-script.gs) bound to the book site's Google Sheet; it appends each of the three forms (Free chapter, Reserve, Press invite) to its own tab. Never reuse another site's endpoint.",
+  "formEndpoint": "https://script.google.com/macros/s/AKfycbzCTPNxLjTPMDpfpUjUuQ_r5ap2hb2wJeO6OQ3HicckeXTqLYeS--1z2wctKIe2xaLjBA/exec",
+  "sheetUrl": "https://docs.google.com/spreadsheets/d/1eCx4VmgG-LmoZ0oqwqBV__KQc00ohMh4sYn0SsbLq08/edit"
+}

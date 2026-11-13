@@ -136,13 +136,13 @@ if bad:
 print("  ok: pages.json, sitemap.xml and llms.txt agree on the same %d URLs" % len(want))
 PY2
 
-echo "--- (j) forms wired to a real endpoint (WARN until the endpoint exists) ---"
-if grep -q 'data-form-endpoint=' index.html 2>/dev/null; then
-  echo "  ok: forms wired"
-else
-  echo "  WARN: the 3 forms (free extract / reserve / invite) show a success state but send"
-  echo "        nothing. Wire a dedicated endpoint for THIS site before launch (see SKILL.md)."
-fi
+echo "--- (j) forms wired to the Google Sheet endpoint (assets/forms.js on both pages) ---"
+EP="$(python3 -c "import json,sys; print(json.load(open('$SKILL_DIR/site-config.json'))['formEndpoint'])")"
+for f in index.html fr.html; do
+  grep -q '<script src="assets/forms.js" defer></script>' "$f" && echo "  ok: $f loads assets/forms.js" || { echo "  BAD: $f does not load assets/forms.js (patch-forms.py not applied)"; fail=1; }
+done
+grep -q "$EP" assets/forms.js 2>/dev/null && echo "  ok: assets/forms.js carries the endpoint from site-config.json" || { echo "  BAD: assets/forms.js missing or endpoint differs from site-config.json"; fail=1; }
+[ "$(curl -s -m 20 -L "$EP")" = "Book site forms endpoint is running." ] && echo "  ok: endpoint answers (GET)" || echo "  WARN: endpoint did not answer the GET check (offline, or the deployment changed)"
 
 echo "--- (l) layout: desktop 1440 / tablet 768 / mobile 390, EN + FR, no overflow ---"
 python3 "$SKILL_DIR/check-layout.py" || fail=1

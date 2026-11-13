@@ -63,21 +63,24 @@ Starting the skill is the go. There is no "did you finish editing?" question and
 | (f) | permanent files present; **draft:** no CNAME, both pages noindex / **launched:** CNAME = domain | yes |
 | (h) | pre-render mirror with zero `{{ }}` | yes when launched, **WARN in draft** (pages are noindex) |
 | (i) | `pages.json` = `sitemap.xml` = `llms.txt` | yes |
-| (j) | forms wired | WARN |
+| (j) | forms wired: script tag on both pages, endpoint in assets/forms.js, endpoint answers | yes (GET = WARN) |
 | (k) | languages: `/` lang=en and `/fr` lang=fr, own canonical, hreflang en + fr | yes |
 | (l) | **layout** (`check-layout.py`): `/` and `/fr` at 390 / 768 / 1440 px in a true-width iframe (headless Chrome cannot go under 500 px): no horizontal scroll, no unclipped element past the edge, `<h1>` rendered. Visible `{{ }}` = WARN | yes |
 | (m) | **SEO + LLM-SEO + guardrails** (`check-seo.py`): title/description lengths (WARN), OG + Twitter tags, og:image 1200×630, JSON-LD Book with 2 authors (Marylène first, both with url), favicon/apple-touch-icon, robots meta matches the mode; robots.txt allows GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended; llms.txt well-formed with both authors; **no real client name or real surname** in any published file (hash-based, because the repo is public) | yes |
 
 After the push, `verify-live.sh` repeats the essentials on the live URL.
 
-## Forms (must be solved before launch)
-Three forms (free extract, reserve, invite) show a success state but **send nothing**. Before launch:
-1. Choose a destination: **Brevo** (French, GDPR; the list tool in `promotion/04-site-brief-claude-design.md`) or a dedicated Google Apps Script web app.
-2. Write `patch-forms.py` (honeypot, double opt-in), mark the page `data-form-endpoint=`, and add it as stage 3.
-3. **Never reuse gregory-renard-site's endpoint**: it writes into Greg's personal contact spreadsheet.
+## Forms (wired to a Google Sheet)
+The three forms (free chapter, reserve, press invite) write to the book site's Google Sheet, one tab each: `Free chapter`, `Reserve`, `Press invite` (+ `Other`, and a `Summary` tab with counts). Sheet: `site-config.json` → `sheetUrl`.
+- `forms-apps-script.gs` is the source of the Apps Script bound to that sheet (deployed as a web app, execute as the owner, access Anyone). Editing the file changes nothing until it is pasted into the editor and redeployed with **Manage deployments → Edit → New version**, so the `/exec` URL stays the same.
+- `patch-forms.py` (stage 4c, after `book-seo.py`) builds `assets/forms.js` from `forms-overlay.js` + `site-config.json` and adds one `<script>` tag to `index.html` and `fr.html`. It never edits the Design component script. The overlay listens for `submit` in the capture phase and tells the forms apart by field name (`media` = Press invite, `book_lang`/`company` = Reserve, else Free chapter).
+- Gate (j) checks the script tag on both pages, the endpoint in `assets/forms.js`, and a GET on the endpoint.
+- The posts are `no-cors`, so the page cannot read the answer and shows its own thank-you either way: the only proof a form works is a row in the sheet. Test each form after any change to the overlay or the script.
+- **Nothing sends the free chapter or any confirmation email.** The page says "The extract is on its way to your inbox", but the sheet only records the request. That mail still needs a sender (Brevo or an Apps Script `MailApp` step).
+- **Never reuse another site's endpoint.**
 
 ## Permanent repo files (not from Design; a sync must never clobber them)
-`404.html` (computes its home links, so it works on both hosts), `robots.txt`, `sitemap.xml`, `llms.txt` (hand-written: editorial, never generated), `support.js` (the dc-runtime from this Design project; vendored), `assets/`, and `CNAME` once launched.
+`404.html` (computes its home links, so it works on both hosts), `robots.txt`, `sitemap.xml`, `llms.txt` (hand-written: editorial, never generated), `support.js` (the dc-runtime from this Design project; vendored), `assets/` (including the generated `assets/forms.js`), and `CNAME` once launched.
 
 ## Content guardrails (from `promotion/00-positioning.md`)
 - The client is **ACME** in all published text: never the real name, including in alt text, JSON-LD, llms.txt and commit messages (gate (m) enforces it for files).
