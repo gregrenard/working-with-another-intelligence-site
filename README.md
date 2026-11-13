@@ -40,7 +40,7 @@ Served without a custom domain at https://gregrenard.github.io/working-with-anot
 
 ## Before launch
 
-- **Forms are not wired.** The three forms (free extract, reserve, invite) send nothing yet (verify gate (j)). See `SKILL.md` → "Forms".
+- **The forms write to a Google Sheet** (one tab each), but nothing sends the free chapter or a confirmation email yet. See `SKILL.md` → "Forms".
 - **Design `github.md`** still points at gregory-renard-site: update it in Claude Design.
 
 ## Preview locally

@@ -41,7 +41,6 @@ echo "==> 2/6  rewrite home link -> ./  (href + JS url forms, quote-anchored)"
 sed -i '' "s|\"$HOME_RE\"|\"./\"|g" "${DC_FILES[@]}" index.html
 sed -i '' "s|'$HOME_RE'|'./'|g"     "${DC_FILES[@]}" index.html
 
-echo "==> 3/6  forms: wired after book-seo (stage 4c)"
 
 echo "==> 4/6  clean URLs + static SEO head"
 python3 "$SKILL_DIR/seo-clean-urls.py"
