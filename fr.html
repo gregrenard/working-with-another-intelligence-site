@@ -64,7 +64,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
   footer{padding-bottom:72px}
 }
 </style>
-<style id="woai-layout-fix">h1[style*="nowrap"]{white-space:normal!important;text-wrap:balance}@media (max-width:640px){span[style*="tabular-nums"][style*="nowrap"]{white-space:normal!important;font-size:2rem!important;overflow-wrap:anywhere}p span[style*="nowrap"],p[style*="nowrap"]{white-space:normal!important;text-overflow:clip!important}html,body{overflow-x:hidden}}</style>
+<style id="woai-layout-fix">h1[style*="nowrap"]{white-space:normal!important;text-wrap:balance}p[style*="ellipsis"]{white-space:normal!important;text-overflow:clip!important;overflow:visible!important}@media (max-width:640px){span[style*="tabular-nums"][style*="nowrap"]{white-space:normal!important;font-size:2rem!important;overflow-wrap:anywhere}p span[style*="nowrap"],p[style*="nowrap"]{white-space:normal!important;text-overflow:clip!important}html,body{overflow-x:hidden}}</style>
 <!--book-seo-->
 <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
@@ -205,9 +205,8 @@ details[open] .wa-chev{transform:rotate(45deg)}
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px">
         <a href="#buy" style="background:#CF132F;color:#FFFFFF;text-decoration:none;font-weight:600;padding:15px 24px;border-radius:3px" style-hover="background:#A80F26;color:#FFFFFF">{{ t.heroBuy }}</a>
-        <a href="#extract" style="background:#FAF7EF;color:#172139;text-decoration:none;font-weight:600;padding:14px 22px;border:1px solid #172139;border-radius:3px" style-hover="background:#172139;color:#FAF7EF">{{ t.heroExtract }}</a>
       </div>
-      <p style="margin:0;font-size:14px;color:#6C7180;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.authorsLine }} · {{ t.heroMeta }} · <span style="color:#CF132F">{{ t.forewordLine }}</span></p>
+      <p style="margin:0;font-size:14px;color:#6C7180;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.authorsLine }} · {{ t.heroMeta }}<br><span style="color:#CF132F">{{ t.forewordLine }}</span></p>
     </div>
 
     <div style="display:flex;justify-content:flex-end;align-self:start;padding-right:14px">
@@ -591,7 +590,6 @@ details[open] .wa-chev{transform:rotate(45deg)}
         <div style="display:flex;flex-direction:column;gap:14px">
           <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#7A5E14">{{ t.thanks }} {{ reserveName }}</p>
           <p style="margin:0;font-family:'Newsreader',serif;font-size:1.6rem;line-height:1.25">{{ t.reservedTitle }}</p>
-          <a href="#extract" style="align-self:flex-start;border:1px solid #172139;color:#172139;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:3px">{{ t.heroExtract }}</a>
         </div>
       </sc-if>
     </div>
@@ -743,7 +741,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
 
 </div>
 </x-dc>
-<!--dc-prerender-start--><div id="dc-prerender"><div class="sc-host" data-sc-name="fr"><div data-dc-tpl="28" lang="fr" style="min-height: 100vh; background: rgb(250, 247, 239); color: rgb(23, 33, 57); overflow-x: clip;"><div data-dc-tpl="29" style="background: rgb(23, 33, 57); color: rgb(244, 239, 227); font-size: 14px; line-height: 1.4; text-align: center; padding: 10px 16px;"><span class="sc-interp">Précommande ouverte : sortie le 1er décembre 2026, en ebook et en livre audio.</span></div><header data-dc-tpl="30" style="position: sticky; top: 0px; z-index: 60; background: rgba(250, 247, 239, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgb(227, 220, 203);">
+<!--dc-prerender-start--><div id="dc-prerender"><div class="sc-host" data-sc-name="fr"><div data-dc-tpl="28" lang="fr" style="min-height: 100vh; background: rgb(250, 247, 239); color: rgb(23, 33, 57); overflow-x: clip;"><div data-dc-tpl="29" style="background: rgb(23, 33, 57); color: rgb(244, 239, 227); font-size: 14px; line-height: 1.4; text-align: center; padding: 10px 16px;"><span class="sc-interp">Précommande ouverte : sortie le 16 décembre 2026, en ebook et en livre audio.</span></div><header data-dc-tpl="30" style="position: sticky; top: 0px; z-index: 60; background: rgba(250, 247, 239, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgb(227, 220, 203);">
   <nav data-dc-tpl="31" class="wa-pad" aria-label="Main" style="max-width: 1240px; margin: 0px auto; padding: 14px 32px; display: flex; align-items: center; gap: 24px;">
     <a data-dc-tpl="32" href="#top" style="margin-right: auto; text-decoration: none; display: flex; flex-direction: column; font-family: Oswald, sans-serif; font-weight: 700; color: rgb(207, 19, 47); font-size: 15px; line-height: 1.02; letter-spacing: 0.04em; text-transform: uppercase;">
       <span data-dc-tpl="33">Working with</span><span data-dc-tpl="34">Another Intelligence</span>
@@ -826,9 +824,8 @@ details[open] .wa-chev{transform:rotate(45deg)}
       </div>
       <div data-dc-tpl="96" style="display: flex; flex-wrap: wrap; gap: 12px;">
         <a data-dc-tpl="97" href="#buy" class="scp0" style="background: rgb(207, 19, 47); color: rgb(255, 255, 255); text-decoration: none; font-weight: 600; padding: 15px 24px; border-radius: 3px;"><span class="sc-interp">Réserver mon exemplaire</span></a>
-        <a data-dc-tpl="98" href="#extract" class="scp1" style="background: rgb(250, 247, 239); color: rgb(23, 33, 57); text-decoration: none; font-weight: 600; padding: 14px 22px; border: 1px solid rgb(23, 33, 57); border-radius: 3px;"><span class="sc-interp">Lire l’introduction et le chapitre 1 gratuitement</span></a>
       </div>
-      <p data-dc-tpl="99" style="margin: 0px; font-size: 14px; color: rgb(108, 113, 128); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span class="sc-interp">Marylène Delbourg-Delphis &amp; Gregory Renard</span> · <span class="sc-interp">Ebook &amp; livre audio · FR / EN</span> · <span data-dc-tpl="100" style="color: rgb(207, 19, 47);"><span class="sc-interp">Préface de Guy Kawasaki</span></span></p>
+      <p data-dc-tpl="98" style="margin: 0px; font-size: 14px; color: rgb(108, 113, 128); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span class="sc-interp">Marylène Delbourg-Delphis &amp; Gregory Renard</span> · <span class="sc-interp">Ebook &amp; livre audio · FR / EN</span><br data-dc-tpl="99"><span data-dc-tpl="100" style="color: rgb(207, 19, 47);"><span class="sc-interp">Préface de Guy Kawasaki</span></span></p>
     </div>
 
     <div data-dc-tpl="101" style="display: flex; justify-content: flex-end; align-self: start; padding-right: 14px;">
@@ -857,7 +854,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
     <p data-dc-tpl="127" style="margin: 0px; display: flex; align-items: center; gap: 14px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(212, 165, 90);"><span data-dc-tpl="128" style="width: 32px; height: 1px; background: rgb(212, 165, 90);"></span><span class="sc-interp">Extrait de la préface</span></p>
     <blockquote data-dc-tpl="129" style="margin: 0px; font-family: Newsreader, serif; font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.3; font-weight: 400; text-wrap: pretty;"><span class="sc-interp">« Si vous voulez des slogans sur l’IA, allez dans une conférence.</span><br data-dc-tpl="130"><span class="sc-interp">Si vous voulez comprendre comment l’adoption de l’IA se passe vraiment, lisez ce livre. »</span></blockquote>
     <div data-dc-tpl="131" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; font-size: 15px; line-height: 1.5;">
-      <a data-dc-tpl="132" href="https://guykawasaki.com/" target="_blank" rel="noopener" class="scp2" style="font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(244, 239, 227); text-decoration: none; border-bottom: 1px solid rgb(212, 165, 90);">Guy Kawasaki</a>
+      <a data-dc-tpl="132" href="https://guykawasaki.com/" target="_blank" rel="noopener" class="scp1" style="font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(244, 239, 227); text-decoration: none; border-bottom: 1px solid rgb(212, 165, 90);">Guy Kawasaki</a>
       <span data-dc-tpl="133" style="color: rgb(201, 196, 184);"><span class="sc-interp">Animateur du podcast Remarkable People</span></span>
     </div>
   </div></section><section data-dc-tpl="134" id="book" class="wa-pad" style="padding: clamp(52px, 6vw, 84px) 32px;">
@@ -1254,15 +1251,15 @@ details[open] .wa-chev{transform:rotate(45deg)}
     </div>
     <div data-dc-tpl="264" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; border-top: 1px solid rgb(23, 33, 57); padding-top: 28px;">
       <p data-dc-tpl="265" style="margin: 0px; font-family: Newsreader, serif; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.4; max-width: 40em; text-wrap: pretty;"><span class="sc-interp">Deux pionniers de la Silicon Valley. Le terrain et le recul. La technologie et le management, testés l’un contre l’autre.</span></p>
-      <a data-dc-tpl="266" href="#invite" class="scp1" style="border: 1px solid rgb(23, 33, 57); color: rgb(23, 33, 57); text-decoration: none; font-weight: 600; padding: 13px 20px; border-radius: 3px;"><span class="sc-interp">Inviter les auteurs</span></a>
+      <a data-dc-tpl="266" href="#invite" class="scp2" style="border: 1px solid rgb(23, 33, 57); color: rgb(23, 33, 57); text-decoration: none; font-weight: 600; padding: 13px 20px; border-radius: 3px;"><span class="sc-interp">Inviter les auteurs</span></a>
     </div>
   </div></section><section data-dc-tpl="267" aria-label="Quotes" class="wa-pad" style="padding: clamp(48px, 5.5vw, 80px) 32px;">
   <div data-dc-tpl="268" style="max-width: 960px; margin: 0px auto; display: flex; flex-direction: column; gap: 32px;">
     <div data-dc-tpl="269" style="display: flex; justify-content: space-between; align-items: center; gap: 16px;">
       <p data-dc-tpl="270" style="margin: 0px; display: flex; align-items: center; gap: 14px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(122, 94, 20);"><span data-dc-tpl="271" style="width: 32px; height: 1px; background: rgb(148, 115, 27);"></span><span class="sc-interp">Citations · 01 / 08</span></p>
       <div data-dc-tpl="272" style="display: flex; gap: 8px;">
-        <button data-dc-tpl="273" type="button" aria-label="Previous" class="scp1" style="width: 44px; height: 44px; border: 1px solid rgb(23, 33, 57); background: transparent; color: rgb(23, 33, 57); cursor: pointer; font-size: 18px;">←</button>
-        <button data-dc-tpl="274" type="button" aria-label="Next" class="scp1" style="width: 44px; height: 44px; border: 1px solid rgb(23, 33, 57); background: transparent; color: rgb(23, 33, 57); cursor: pointer; font-size: 18px;">→</button>
+        <button data-dc-tpl="273" type="button" aria-label="Previous" class="scp2" style="width: 44px; height: 44px; border: 1px solid rgb(23, 33, 57); background: transparent; color: rgb(23, 33, 57); cursor: pointer; font-size: 18px;">←</button>
+        <button data-dc-tpl="274" type="button" aria-label="Next" class="scp2" style="width: 44px; height: 44px; border: 1px solid rgb(23, 33, 57); background: transparent; color: rgb(23, 33, 57); cursor: pointer; font-size: 18px;">→</button>
       </div>
     </div>
     <figure data-dc-tpl="275" aria-live="polite" style="margin: 0px; border-left: 2px solid rgb(148, 115, 27); padding-left: clamp(20px, 4vw, 40px); min-height: 180px; display: flex; flex-direction: column; justify-content: center;">
@@ -1504,7 +1501,7 @@ details[open] .wa-chev{transform:rotate(45deg)}
     <div data-dc-tpl="351" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px clamp(32px, 6vw, 88px); align-items: start;">
       <p data-dc-tpl="352" style="grid-column: 1 / -1; margin: 0px; display: flex; align-items: center; gap: 14px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(122, 94, 20);"><span data-dc-tpl="353" style="width: 32px; height: 1px; background: rgb(148, 115, 27);"></span><span class="sc-interp">Réserver</span></p>
       <h2 data-dc-tpl="354" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.12;"><span class="sc-interp">Soyez parmi les premiers à le lire.</span></h2>
-      <p data-dc-tpl="355" style="margin: 0px; font-size: 1.125rem; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Sortie le 1er décembre 2026 en ebook et en livre audio. Réservez maintenant, nous vous prévenons dès la disponibilité. Aucun paiement aujourd’hui.</span></p>
+      <p data-dc-tpl="355" style="margin: 0px; font-size: 1.125rem; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Sortie le 16 décembre 2026 en ebook et en livre audio. Réservez maintenant, nous vous prévenons dès la disponibilité. Aucun paiement aujourd’hui.</span></p>
     </div>
     <div data-dc-tpl="356" style="border: 1px solid rgb(23, 33, 57); background: rgb(255, 255, 255); padding: clamp(24px, 4vw, 40px);">
       
@@ -1555,229 +1552,229 @@ details[open] .wa-chev{transform:rotate(45deg)}
       
     </div>
 
-  </div></section><section data-dc-tpl="397" id="press" class="wa-pad" style="padding: clamp(48px, 5.5vw, 76px) 32px; background: rgb(244, 239, 227); border-top: 1px solid rgb(227, 220, 203); border-bottom: 1px solid rgb(227, 220, 203);">
-  <div data-dc-tpl="398" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(32px, 6vw, 72px);">
-    <div data-dc-tpl="399" style="display: flex; flex-direction: column; gap: 18px;">
-      <p data-dc-tpl="400" style="margin: 0px; display: flex; align-items: center; gap: 14px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(122, 94, 20);"><span data-dc-tpl="401" style="width: 32px; height: 1px; background: rgb(148, 115, 27);"></span><span class="sc-interp">Presse &amp; conférences</span></p>
-      <h2 data-dc-tpl="402" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.12;"><span class="sc-interp">Presse, podcasts, conférences.</span></h2>
-      <p data-dc-tpl="403" style="margin: 0px; font-size: 1.125rem; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Keynote (45 min), session CODIR (2 h, test du réel + ratio de préparation à l’innovation) et table ronde à deux voix, en français ou en anglais. Nous ne vendons pas de solution. Nous aidons les équipes dirigeantes à se poser les bonnes questions avant de dépenser.</span></p>
-      <div data-dc-tpl="404" style="display: flex; flex-direction: column;">
-        <p data-dc-tpl="405" style="margin: 0px 0px 6px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(108, 113, 128);"><span class="sc-interp">Sujets que nous pouvons traiter</span></p>
+  </div></section><section data-dc-tpl="396" id="press" class="wa-pad" style="padding: clamp(48px, 5.5vw, 76px) 32px; background: rgb(244, 239, 227); border-top: 1px solid rgb(227, 220, 203); border-bottom: 1px solid rgb(227, 220, 203);">
+  <div data-dc-tpl="397" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(32px, 6vw, 72px);">
+    <div data-dc-tpl="398" style="display: flex; flex-direction: column; gap: 18px;">
+      <p data-dc-tpl="399" style="margin: 0px; display: flex; align-items: center; gap: 14px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(122, 94, 20);"><span data-dc-tpl="400" style="width: 32px; height: 1px; background: rgb(148, 115, 27);"></span><span class="sc-interp">Presse &amp; conférences</span></p>
+      <h2 data-dc-tpl="401" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.12;"><span class="sc-interp">Presse, podcasts, conférences.</span></h2>
+      <p data-dc-tpl="402" style="margin: 0px; font-size: 1.125rem; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Keynote (45 min), session CODIR (2 h, test du réel + ratio de préparation à l’innovation) et table ronde à deux voix, en français ou en anglais. Nous ne vendons pas de solution. Nous aidons les équipes dirigeantes à se poser les bonnes questions avant de dépenser.</span></p>
+      <div data-dc-tpl="403" style="display: flex; flex-direction: column;">
+        <p data-dc-tpl="404" style="margin: 0px 0px 6px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(108, 113, 128);"><span class="sc-interp">Sujets que nous pouvons traiter</span></p>
         
-          <p data-dc-tpl="407" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">IA fantôme et agentivité cognitive</span></p>
+          <p data-dc-tpl="406" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">IA fantôme et agentivité cognitive</span></p>
         
-          <p data-dc-tpl="407" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">Pourquoi le ROI de l’IA se mesure mal</span></p>
+          <p data-dc-tpl="406" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">Pourquoi le ROI de l’IA se mesure mal</span></p>
         
-          <p data-dc-tpl="407" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">« L’IA va-t-elle me remplacer ? », en vrai</span></p>
+          <p data-dc-tpl="406" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">« L’IA va-t-elle me remplacer ? », en vrai</span></p>
         
-          <p data-dc-tpl="407" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">L’humain dans la boucle et le pouvoir</span></p>
+          <p data-dc-tpl="406" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">L’humain dans la boucle et le pouvoir</span></p>
         
-          <p data-dc-tpl="407" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">Gouverner une IA agentique (TRUST)</span></p>
+          <p data-dc-tpl="406" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">Gouverner une IA agentique (TRUST)</span></p>
         
-          <p data-dc-tpl="407" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">Trente ans à bâtir la tech dans la Silicon Valley</span></p>
+          <p data-dc-tpl="406" style="margin: 0px; padding: 13px 0px; border-bottom: 1px solid rgb(227, 220, 203); font-family: Newsreader, serif; font-size: 1.15rem; line-height: 1.35;"><span class="sc-interp">Trente ans à bâtir la tech dans la Silicon Valley</span></p>
         
       </div>
-      <p data-dc-tpl="408" style="margin: 0px; font-size: 14px; color: rgb(108, 113, 128);"><span class="sc-interp">Kit presse (bios, photos HD, couverture, chiffres clés) sur demande :</span> <a data-dc-tpl="409" href="mailto:contact@freedom.ai"><span class="sc-interp">contact@freedom.ai</span></a></p>
+      <p data-dc-tpl="407" style="margin: 0px; font-size: 14px; color: rgb(108, 113, 128);"><span class="sc-interp">Kit presse (bios, photos HD, couverture, chiffres clés) sur demande :</span> <a data-dc-tpl="408" href="mailto:contact@freedom.ai"><span class="sc-interp">contact@freedom.ai</span></a></p>
     </div>
-    <div data-dc-tpl="410" id="invite" style="background: rgb(250, 247, 239); border: 1px solid rgb(23, 33, 57); padding: clamp(24px, 4vw, 36px);">
+    <div data-dc-tpl="409" id="invite" style="background: rgb(250, 247, 239); border: 1px solid rgb(23, 33, 57); padding: clamp(24px, 4vw, 36px);">
       
-        <form data-dc-tpl="412" style="display: flex; flex-direction: column; gap: 16px;">
-          <h3 data-dc-tpl="413" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.4rem;"><span class="sc-interp">Inviter les auteurs</span></h3>
-          <div data-dc-tpl="414" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 14px;">
-            <label data-dc-tpl="415" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Nom</span>
-              <input data-dc-tpl="416" name="name" autocomplete="name" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
+        <form data-dc-tpl="411" style="display: flex; flex-direction: column; gap: 16px;">
+          <h3 data-dc-tpl="412" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.4rem;"><span class="sc-interp">Inviter les auteurs</span></h3>
+          <div data-dc-tpl="413" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 14px;">
+            <label data-dc-tpl="414" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Nom</span>
+              <input data-dc-tpl="415" name="name" autocomplete="name" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
             </label>
-            <label data-dc-tpl="417" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Email</span>
-              <input data-dc-tpl="418" type="email" name="email" autocomplete="email" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
+            <label data-dc-tpl="416" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Email</span>
+              <input data-dc-tpl="417" type="email" name="email" autocomplete="email" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
             </label>
-            <label data-dc-tpl="419" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Média / organisation</span>
-              <input data-dc-tpl="420" name="media" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
+            <label data-dc-tpl="418" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Média / organisation</span>
+              <input data-dc-tpl="419" name="media" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
             </label>
-            <label data-dc-tpl="421" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Date</span>
-              <input data-dc-tpl="422" name="date" placeholder="ex. janvier 2027" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
+            <label data-dc-tpl="420" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Date</span>
+              <input data-dc-tpl="421" name="date" placeholder="ex. janvier 2027" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font-size: 16px; border-radius: 3px;">
             </label>
           </div>
-          <fieldset data-dc-tpl="423" style="margin: 0px; padding: 0px; border: 0px; display: flex; flex-direction: column; gap: 8px;">
-            <legend data-dc-tpl="424" style="padding: 0px; margin-bottom: 8px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Format</span></legend>
-            <div data-dc-tpl="425" style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <fieldset data-dc-tpl="422" style="margin: 0px; padding: 0px; border: 0px; display: flex; flex-direction: column; gap: 8px;">
+            <legend data-dc-tpl="423" style="padding: 0px; margin-bottom: 8px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Format</span></legend>
+            <div data-dc-tpl="424" style="display: flex; flex-wrap: wrap; gap: 8px;">
               
-                <label data-dc-tpl="427" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="428" type="radio" name="format" value="podcast" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Podcast</span></label>
+                <label data-dc-tpl="426" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="427" type="radio" name="format" value="podcast" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Podcast</span></label>
               
-                <label data-dc-tpl="427" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="428" type="radio" name="format" value="press" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Interview / article</span></label>
+                <label data-dc-tpl="426" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="427" type="radio" name="format" value="press" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Interview / article</span></label>
               
-                <label data-dc-tpl="427" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="428" type="radio" name="format" value="keynote" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Keynote</span></label>
+                <label data-dc-tpl="426" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="427" type="radio" name="format" value="keynote" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Keynote</span></label>
               
-                <label data-dc-tpl="427" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="428" type="radio" name="format" value="exco" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Session CODIR</span></label>
-              
-            </div>
-          </fieldset>
-          <fieldset data-dc-tpl="429" style="margin: 0px; padding: 0px; border: 0px; display: flex; flex-direction: column; gap: 8px;">
-            <legend data-dc-tpl="430" style="padding: 0px; margin-bottom: 8px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Qui souhaitez-vous inviter ?</span></legend>
-            <div data-dc-tpl="431" style="display: flex; flex-wrap: wrap; gap: 8px;">
-              
-                <label data-dc-tpl="433" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="434" type="radio" name="who" value="both" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Les deux auteurs</span></label>
-              
-                <label data-dc-tpl="433" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="434" type="radio" name="who" value="marylene" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Marylène Delbourg-Delphis</span></label>
-              
-                <label data-dc-tpl="433" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="434" type="radio" name="who" value="gregory" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Gregory Renard</span></label>
+                <label data-dc-tpl="426" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="427" type="radio" name="format" value="exco" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Session CODIR</span></label>
               
             </div>
           </fieldset>
-          <label data-dc-tpl="435" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Message (facultatif)</span>
-            <textarea data-dc-tpl="436" name="message" rows="3" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font: inherit; border-radius: 3px; resize: vertical;"></textarea>
+          <fieldset data-dc-tpl="428" style="margin: 0px; padding: 0px; border: 0px; display: flex; flex-direction: column; gap: 8px;">
+            <legend data-dc-tpl="429" style="padding: 0px; margin-bottom: 8px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Qui souhaitez-vous inviter ?</span></legend>
+            <div data-dc-tpl="430" style="display: flex; flex-wrap: wrap; gap: 8px;">
+              
+                <label data-dc-tpl="432" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="433" type="radio" name="who" value="both" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Les deux auteurs</span></label>
+              
+                <label data-dc-tpl="432" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="433" type="radio" name="who" value="marylene" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Marylène Delbourg-Delphis</span></label>
+              
+                <label data-dc-tpl="432" style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border: 1px solid rgb(23, 33, 57); border-radius: 100px; font-size: 14px; cursor: pointer;"><input data-dc-tpl="433" type="radio" name="who" value="gregory" style="accent-color: rgb(207, 19, 47); margin: 0px;"><span class="sc-interp">Gregory Renard</span></label>
+              
+            </div>
+          </fieldset>
+          <label data-dc-tpl="434" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600;"><span class="sc-interp">Message (facultatif)</span>
+            <textarea data-dc-tpl="435" name="message" rows="3" style="padding: 12px 14px; border: 1px solid rgb(191, 182, 163); background: rgb(255, 255, 255); color: rgb(23, 33, 57); font: inherit; border-radius: 3px; resize: vertical;"></textarea>
           </label>
-          <button data-dc-tpl="437" type="submit" class="scp4" style="align-self: flex-start; background: rgb(23, 33, 57); color: rgb(250, 247, 239); border: 0px; padding: 14px 22px; font-weight: 600; font-size: 15px; cursor: pointer; border-radius: 3px;"><span class="sc-interp">Envoyer la demande</span></button>
+          <button data-dc-tpl="436" type="submit" class="scp4" style="align-self: flex-start; background: rgb(23, 33, 57); color: rgb(250, 247, 239); border: 0px; padding: 14px 22px; font-weight: 600; font-size: 15px; cursor: pointer; border-radius: 3px;"><span class="sc-interp">Envoyer la demande</span></button>
         </form>
       
       
     </div>
-  </div></section><section data-dc-tpl="442" id="faq" class="wa-pad" style="padding: clamp(48px, 5.5vw, 76px) 32px;">
-  <div data-dc-tpl="443" style="max-width: 880px; margin: 0px auto; display: flex; flex-direction: column; gap: 36px;">
-    <div data-dc-tpl="444" style="display: flex; flex-direction: column; gap: 16px;">
-      <p data-dc-tpl="445" style="margin: 0px; display: flex; align-items: center; gap: 14px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(122, 94, 20);"><span data-dc-tpl="446" style="width: 32px; height: 1px; background: rgb(148, 115, 27);"></span>FAQ</p>
-      <h2 data-dc-tpl="447" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.12;"><span class="sc-interp">Questions fréquentes</span></h2>
+  </div></section><section data-dc-tpl="441" id="faq" class="wa-pad" style="padding: clamp(48px, 5.5vw, 76px) 32px;">
+  <div data-dc-tpl="442" style="max-width: 880px; margin: 0px auto; display: flex; flex-direction: column; gap: 36px;">
+    <div data-dc-tpl="443" style="display: flex; flex-direction: column; gap: 16px;">
+      <p data-dc-tpl="444" style="margin: 0px; display: flex; align-items: center; gap: 14px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(122, 94, 20);"><span data-dc-tpl="445" style="width: 32px; height: 1px; background: rgb(148, 115, 27);"></span>FAQ</p>
+      <h2 data-dc-tpl="446" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.12;"><span class="sc-interp">Questions fréquentes</span></h2>
     </div>
-    <div data-dc-tpl="448" style="border-top: 1px solid rgb(23, 33, 57);">
+    <div data-dc-tpl="447" style="border-top: 1px solid rgb(23, 33, 57);">
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">ACME, c’est quelle entreprise ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">ACME, c’est quelle entreprise ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Un grand groupe industriel européen, que nous appelons ACME. Les prénoms des personnes sont également des prénoms d’emprunt : ce qui compte, c’est le processus, pas l’identité.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Un grand groupe industriel européen, que nous appelons ACME. Les prénoms des personnes sont également des prénoms d’emprunt : ce qui compte, c’est le processus, pas l’identité.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Ce livre est-il technique ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Ce livre est-il technique ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Non. Les notions techniques apparaissent quand elles sont nécessaires, expliquées pour des non-spécialistes. Le livre relie les morceaux sans devenir un manuel.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Non. Les notions techniques apparaissent quand elles sont nécessaires, expliquées pour des non-spécialistes. Le livre relie les morceaux sans devenir un manuel.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Je ne travaille pas dans un grand groupe industriel. Est-ce pour moi ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Je ne travaille pas dans un grand groupe industriel. Est-ce pour moi ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Oui. L’histoire porte moins sur les spécificités d’ACME que sur ce que demande le fait de faire fonctionner l’IA dans une organisation. Vous le lirez comme un documentaire.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Oui. L’histoire porte moins sur les spécificités d’ACME que sur ce que demande le fait de faire fonctionner l’IA dans une organisation. Vous le lirez comme un documentaire.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">L’IA a-t-elle été utilisée pour écrire ou traduire ce livre ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">L’IA a-t-elle été utilisée pour écrire ou traduire ce livre ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Le livre a été écrit par ses deux auteurs. L’édition française a été traduite avec l’assistance d’outils d’IA, puis relue et validée phrase par phrase par les auteurs. Pour un livre sur l’IA responsable, nous tenions à le dire.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Le livre a été écrit par ses deux auteurs. L’édition française a été traduite avec l’assistance d’outils d’IA, puis relue et validée phrase par phrase par les auteurs. Pour un livre sur l’IA responsable, nous tenions à le dire.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Qui est l’éditeur ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Qui est l’éditeur ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Freedom.ai, la maison des auteurs. Éditer nous-mêmes nous permet de fixer le prix, de garder les droits et de sortir les deux langues le même jour.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Freedom.ai, la maison des auteurs. Éditer nous-mêmes nous permet de fixer le prix, de garder les droits et de sortir les deux langues le même jour.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Y a-t-il une version papier ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Y a-t-il une version papier ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Pas pour le lancement : ebook et livre audio uniquement.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Pas pour le lancement : ebook et livre audio uniquement.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Dans quelles langues le livre est-il disponible ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Dans quelles langues le livre est-il disponible ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">En français et en anglais, en ebook et en livre audio, le même jour. Le livre a été écrit en anglais ; l’édition française a été traduite et validée par les auteurs.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">En français et en anglais, en ebook et en livre audio, le même jour. Le livre a été écrit en anglais ; l’édition française a été traduite et validée par les auteurs.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Peut-on inviter les auteurs ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Peut-on inviter les auteurs ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Oui, voir Presse &amp; conférences.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">Oui, voir Presse &amp; conférences.</span></p>
         </details>
       
-        <details data-dc-tpl="450" style="border-bottom: 1px solid rgb(227, 220, 203);">
-          <summary data-dc-tpl="451" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
-            <span data-dc-tpl="452" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Qu’est-ce qu’un « système d’intelligence » ?</span></span>
-            <span data-dc-tpl="453" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
+        <details data-dc-tpl="449" style="border-bottom: 1px solid rgb(227, 220, 203);">
+          <summary data-dc-tpl="450" style="display: grid; grid-template-columns: 1fr 24px; gap: 16px; align-items: baseline; padding: 20px 0px;">
+            <span data-dc-tpl="451" style="font-family: Newsreader, serif; font-weight: 500; font-size: 1.2rem; line-height: 1.35;"><span class="sc-interp">Qu’est-ce qu’un « système d’intelligence » ?</span></span>
+            <span data-dc-tpl="452" class="wa-chev" style="font-size: 22px; line-height: 1; color: rgb(148, 115, 27); transition: transform 0.2s;">+</span>
           </summary>
-          <p data-dc-tpl="454" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">La couche qui mobilise le savoir-faire de l’entreprise, apprend de ses experts et reste sous son contrôle, à côté de l’ERP et du CRM.</span></p>
+          <p data-dc-tpl="453" style="margin: 0px; padding: 0px 40px 22px 0px; line-height: 1.65; color: rgb(62, 69, 87);"><span class="sc-interp">La couche qui mobilise le savoir-faire de l’entreprise, apprend de ses experts et reste sous son contrôle, à côté de l’ERP et du CRM.</span></p>
         </details>
       
     </div>
-  </div></section><section data-dc-tpl="455" id="legal" class="wa-pad" style="padding: clamp(40px, 5vw, 64px) 32px; border-top: 1px solid rgb(227, 220, 203);">
-  <div data-dc-tpl="456" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px;">
-    <div data-dc-tpl="457" style="display: flex; flex-direction: column; gap: 10px;">
-      <h2 data-dc-tpl="458" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.3rem;"><span class="sc-interp">Mentions légales</span></h2>
-      <p data-dc-tpl="459" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(108, 113, 128);"><span class="sc-interp">Publié par Freedom.ai (www.freedom.ai). Directeurs de la publication de ce site : Marylène Delbourg-Delphis &amp; Gregory Renard. Hébergeur : Freedom.ai Consulting LLC. Contact : contact@freedom.ai.</span></p>
+  </div></section><section data-dc-tpl="454" id="legal" class="wa-pad" style="padding: clamp(40px, 5vw, 64px) 32px; border-top: 1px solid rgb(227, 220, 203);">
+  <div data-dc-tpl="455" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px;">
+    <div data-dc-tpl="456" style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 data-dc-tpl="457" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.3rem;"><span class="sc-interp">Mentions légales</span></h2>
+      <p data-dc-tpl="458" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(108, 113, 128);"><span class="sc-interp">Publié par Freedom.ai (www.freedom.ai). Directeurs de la publication de ce site : Marylène Delbourg-Delphis &amp; Gregory Renard. Hébergeur : Freedom.ai Consulting LLC. Contact : contact@freedom.ai.</span></p>
     </div>
-    <div data-dc-tpl="460" id="privacy" style="display: flex; flex-direction: column; gap: 10px;">
-      <h2 data-dc-tpl="461" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.3rem;"><span class="sc-interp">Confidentialité</span></h2>
-      <p data-dc-tpl="462" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(108, 113, 128);"><span class="sc-interp">Votre email sert uniquement à vous envoyer l’extrait, la confirmation de votre réservation et, si vous l’avez accepté, notre lettre. Sous-traitant : Brevo (hébergement UE). Désinscription en un clic, suppression sur demande à contact@freedom.ai.</span></p>
+    <div data-dc-tpl="459" id="privacy" style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 data-dc-tpl="460" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.3rem;"><span class="sc-interp">Confidentialité</span></h2>
+      <p data-dc-tpl="461" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(108, 113, 128);"><span class="sc-interp">Votre email sert uniquement à vous envoyer l’extrait, la confirmation de votre réservation et, si vous l’avez accepté, notre lettre. Sous-traitant : Brevo (hébergement UE). Désinscription en un clic, suppression sur demande à contact@freedom.ai.</span></p>
     </div>
-    <div data-dc-tpl="463" id="cookies" style="display: flex; flex-direction: column; gap: 10px;">
-      <h2 data-dc-tpl="464" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.3rem;"><span class="sc-interp">Cookies</span></h2>
-      <p data-dc-tpl="465" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(108, 113, 128);"><span class="sc-interp">Ce site n’utilise aucun cookie publicitaire. La mesure d’audience est faite avec Plausible, sans cookie ni donnée personnelle : aucun bandeau de consentement n’est nécessaire.</span></p>
+    <div data-dc-tpl="462" id="cookies" style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 data-dc-tpl="463" style="margin: 0px; font-family: Newsreader, serif; font-weight: 500; font-size: 1.3rem;"><span class="sc-interp">Cookies</span></h2>
+      <p data-dc-tpl="464" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(108, 113, 128);"><span class="sc-interp">Ce site n’utilise aucun cookie publicitaire. La mesure d’audience est faite avec Plausible, sans cookie ni donnée personnelle : aucun bandeau de consentement n’est nécessaire.</span></p>
     </div>
-  </div></section></main><footer data-dc-tpl="466" style="background: rgb(23, 33, 57); color: rgb(220, 214, 200);">
-  <div data-dc-tpl="467" class="wa-pad" style="max-width: 1240px; margin: 0px auto; padding: 56px 32px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 36px;">
-    <div data-dc-tpl="468" style="display: flex; flex-direction: column; gap: 14px;">
-      <span data-dc-tpl="469" style="display: flex; flex-direction: column; font-family: Oswald, sans-serif; font-weight: 700; color: rgb(224, 122, 95); font-size: 18px; line-height: 1.02; letter-spacing: 0.04em; text-transform: uppercase;"><span data-dc-tpl="470">Working with</span><span data-dc-tpl="471">Another Intelligence</span></span>
-      <p data-dc-tpl="472" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(163, 168, 176); max-width: 280px;"><span class="sc-interp">Pourquoi le succès de l’IA dépend plus des gens que de la technologie. Par Marylène Delbourg-Delphis et Gregory Renard. Préface de Guy Kawasaki.</span></p>
+  </div></section></main><footer data-dc-tpl="465" style="background: rgb(23, 33, 57); color: rgb(220, 214, 200);">
+  <div data-dc-tpl="466" class="wa-pad" style="max-width: 1240px; margin: 0px auto; padding: 56px 32px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 36px;">
+    <div data-dc-tpl="467" style="display: flex; flex-direction: column; gap: 14px;">
+      <span data-dc-tpl="468" style="display: flex; flex-direction: column; font-family: Oswald, sans-serif; font-weight: 700; color: rgb(224, 122, 95); font-size: 18px; line-height: 1.02; letter-spacing: 0.04em; text-transform: uppercase;"><span data-dc-tpl="469">Working with</span><span data-dc-tpl="470">Another Intelligence</span></span>
+      <p data-dc-tpl="471" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(163, 168, 176); max-width: 280px;"><span class="sc-interp">Pourquoi le succès de l’IA dépend plus des gens que de la technologie. Par Marylène Delbourg-Delphis et Gregory Renard. Préface de Guy Kawasaki.</span></p>
     </div>
     
-      <div data-dc-tpl="474" style="display: flex; flex-direction: column; gap: 10px;">
-        <p data-dc-tpl="475" style="margin: 0px 0px 4px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(212, 165, 90);"><span class="sc-interp">Le livre</span></p>
+      <div data-dc-tpl="473" style="display: flex; flex-direction: column; gap: 10px;">
+        <p data-dc-tpl="474" style="margin: 0px 0px 4px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(212, 165, 90);"><span class="sc-interp">Le livre</span></p>
         
-          <a data-dc-tpl="477" href="#chapters" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Les chapitres</span></a>
+          <a data-dc-tpl="476" href="#chapters" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Les chapitres</span></a>
         
-          <a data-dc-tpl="477" href="#authors" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Les auteurs</span></a>
+          <a data-dc-tpl="476" href="#authors" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Les auteurs</span></a>
         
-          <a data-dc-tpl="477" href="#extract" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Extrait gratuit</span></a>
+          <a data-dc-tpl="476" href="#extract" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Extrait gratuit</span></a>
         
-          <a data-dc-tpl="477" href="#buy" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Réserver</span></a>
+          <a data-dc-tpl="476" href="#buy" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Réserver</span></a>
         
       </div>
     
-      <div data-dc-tpl="474" style="display: flex; flex-direction: column; gap: 10px;">
-        <p data-dc-tpl="475" style="margin: 0px 0px 4px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(212, 165, 90);"><span class="sc-interp">Échanger</span></p>
+      <div data-dc-tpl="473" style="display: flex; flex-direction: column; gap: 10px;">
+        <p data-dc-tpl="474" style="margin: 0px 0px 4px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(212, 165, 90);"><span class="sc-interp">Échanger</span></p>
         
-          <a data-dc-tpl="477" href="#soi" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">System of Intelligence</span></a>
+          <a data-dc-tpl="476" href="#soi" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">System of Intelligence</span></a>
         
-          <a data-dc-tpl="477" href="#press" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Presse &amp; conférences</span></a>
+          <a data-dc-tpl="476" href="#press" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Presse &amp; conférences</span></a>
         
-          <a data-dc-tpl="477" href="#extract" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Newsletter</span></a>
+          <a data-dc-tpl="476" href="#extract" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Newsletter</span></a>
         
-          <a data-dc-tpl="477" href="?lang=en" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">English edition</span></a>
+          <a data-dc-tpl="476" href="?lang=en" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">English edition</span></a>
         
       </div>
     
-      <div data-dc-tpl="474" style="display: flex; flex-direction: column; gap: 10px;">
-        <p data-dc-tpl="475" style="margin: 0px 0px 4px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(212, 165, 90);"><span class="sc-interp">Légal</span></p>
+      <div data-dc-tpl="473" style="display: flex; flex-direction: column; gap: 10px;">
+        <p data-dc-tpl="474" style="margin: 0px 0px 4px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(212, 165, 90);"><span class="sc-interp">Légal</span></p>
         
-          <a data-dc-tpl="477" href="#legal" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Mentions légales</span></a>
+          <a data-dc-tpl="476" href="#legal" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Mentions légales</span></a>
         
-          <a data-dc-tpl="477" href="#privacy" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Confidentialité</span></a>
+          <a data-dc-tpl="476" href="#privacy" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Confidentialité</span></a>
         
-          <a data-dc-tpl="477" href="#cookies" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Gestion des cookies</span></a>
+          <a data-dc-tpl="476" href="#cookies" class="scp5" style="font-size: 14px; color: rgb(220, 214, 200); text-decoration: none;"><span class="sc-interp">Gestion des cookies</span></a>
         
       </div>
     
   </div>
-  <div data-dc-tpl="478" style="border-top: 1px solid rgba(244, 239, 227, 0.12);">
-    <div data-dc-tpl="479" class="wa-pad" style="max-width: 1240px; margin: 0px auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 13px; color: rgb(163, 168, 176);">
-      <span data-dc-tpl="480">© 2026 <span class="sc-interp">Marylène Delbourg-Delphis &amp; Gregory Renard</span></span>
-      <span data-dc-tpl="481"><span class="sc-interp">ACME est un nom d’emprunt. Les chiffres cités sont issus du récit.</span></span>
+  <div data-dc-tpl="477" style="border-top: 1px solid rgba(244, 239, 227, 0.12);">
+    <div data-dc-tpl="478" class="wa-pad" style="max-width: 1240px; margin: 0px auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 13px; color: rgb(163, 168, 176);">
+      <span data-dc-tpl="479">© 2026 <span class="sc-interp">Marylène Delbourg-Delphis &amp; Gregory Renard</span></span>
+      <span data-dc-tpl="480"><span class="sc-interp">ACME est un nom d’emprunt. Les chiffres cités sont issus du récit.</span></span>
     </div>
-  </div></footer><div data-dc-tpl="482" class="wa-sticky-buy">
-  <a data-dc-tpl="483" href="#buy" style="flex: 1 1 0%; display: flex; align-items: center; justify-content: center; min-height: 48px; background: rgb(207, 19, 47); color: rgb(255, 255, 255); text-decoration: none; font-weight: 600; border-radius: 3px;"><span class="sc-interp">Réserver mon exemplaire</span></a></div></div></div></div><!--dc-prerender-end-->
+  </div></footer><div data-dc-tpl="481" class="wa-sticky-buy">
+  <a data-dc-tpl="482" href="#buy" style="flex: 1 1 0%; display: flex; align-items: center; justify-content: center; min-height: 48px; background: rgb(207, 19, 47); color: rgb(255, 255, 255); text-decoration: none; font-weight: 600; border-radius: 3px;"><span class="sc-interp">Réserver mon exemplaire</span></a></div></div></div></div><!--dc-prerender-end-->
 <script type="text/x-dc" data-dc-script data-props="{&quot;pressEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;heroLine&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sovereignty&quot;,&quot;training&quot;,&quot;leak&quot;,&quot;buy&quot;,&quot;asset&quot;,&quot;employees&quot;,&quot;brussels&quot;],&quot;default&quot;:&quot;sovereignty&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;punchRotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;label&quot;:&quot;Rotate red line&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;punchSeconds&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:7,&quot;min&quot;:3,&quot;max&quot;:20,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;label&quot;:&quot;Seconds per line&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;phase&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;preorder&quot;,&quot;launch&quot;],&quot;default&quot;:&quot;preorder&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;audioPrice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;releaseDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;showGift&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;portraits&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;duotone&quot;,&quot;color&quot;],&quot;default&quot;:&quot;duotone&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Authors&quot;}}">
 class Component extends DCLogic {
   state = { lang: 'fr', q: 0, submitted: false, firstName: '', reserved: false, reserveName: '', invited: false, punch: 0, punchFade: false };
@@ -1816,7 +1813,7 @@ class Component extends DCLogic {
     const lang = this.state.lang;
     const phase = this.props.phase ?? 'preorder';
     const pre = phase === 'preorder';
-    const date = this.props.releaseDate || (lang === 'fr' ? '1er décembre 2026' : '1 December 2026');
+    const date = this.props.releaseDate || (lang === 'fr' ? '16 décembre 2026' : '16 December 2026');
     const T = lang === 'fr' ? this.fr(date, pre) : this.en(date, pre);
     const pressEmail = this.props.pressEmail || 'contact@freedom.ai';
     const hk = this.props.heroLine ?? 'sovereignty';

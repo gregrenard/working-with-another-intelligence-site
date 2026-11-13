@@ -1,9 +1,14 @@
 {
-  "_comment": "Deploy-time settings read by patch-forms.py and verify.sh. formEndpoint: the /exec URL of the Google Apps Script web app (source: forms-apps-script.gs) bound to the book site's Google Sheet; it appends each of the three forms (Free chapter, Reserve, Press invite) to its own tab. Never reuse another site's endpoint. legal: values for the {{HEBERGEUR}} and {{EMAIL_PRESSE}} tokens Design leaves in the legal text; fill-placeholders.py writes them into both pages, and EMAIL_PRESSE also becomes the press mailto address.",
+  "_comment": "Deploy-time settings read by patch-forms.py and verify.sh. formEndpoint: the /exec URL of the Google Apps Script web app (source: forms-apps-script.gs) bound to the book site's Google Sheet; it appends each of the three forms (Free chapter, Reserve, Press invite) to its own tab. Never reuse another site's endpoint. legal: values for the {{HEBERGEUR}} and {{EMAIL_PRESSE}} tokens Design leaves in the legal text; fill-placeholders.py writes them into both pages, and EMAIL_PRESSE also becomes the press mailto address. releaseDate: the publication date shown on the page (top bar, hero line, pre-order text). Design hardcodes a default in the component; set-release-date.py replaces it at deploy time. hideExtractButtons: while true, hide-extract-buttons.py removes the 'Read the introduction and Chapter 1 free' buttons (hero, and the link shown after a reservation), because nothing sends the extract yet. Set to false to bring them back.",
   "formEndpoint": "https://script.google.com/macros/s/AKfycbzCTPNxLjTPMDpfpUjUuQ_r5ap2hb2wJeO6OQ3HicckeXTqLYeS--1z2wctKIe2xaLjBA/exec",
   "sheetUrl": "https://docs.google.com/spreadsheets/d/1eCx4VmgG-LmoZ0oqwqBV__KQc00ohMh4sYn0SsbLq08/edit",
   "legal": {
     "HEBERGEUR": "Freedom.ai Consulting LLC",
     "EMAIL_PRESSE": "contact@freedom.ai"
-  }
+  },
+  "releaseDate": {
+    "en": "16 December 2026",
+    "fr": "16 décembre 2026"
+  },
+  "hideExtractButtons": true
 }

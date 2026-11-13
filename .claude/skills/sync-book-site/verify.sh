@@ -147,6 +147,38 @@ grep -q "$EP" assets/forms.js 2>/dev/null && echo "  ok: assets/forms.js carries
 echo "--- (j2) no Design legal token left in the pages ---"
 if grep -qE '\{\{[A-Z_]+\}\}' index.html fr.html; then echo "  BAD: uppercase {{TOKEN}} still visible (add it to site-config.json legal): $(grep -ohE '\{\{[A-Z_]+\}\}' index.html fr.html | sort -u | tr '\n' ' ')"; fail=1; else echo "  ok: no {{TOKEN}} left"; fi
 
+echo "--- (j3) release date on both pages equals site-config.json (static mirror too) ---"
+python3 - "$SKILL_DIR" <<'PYD' || fail=1
+import json, re, sys
+d = json.load(open(sys.argv[1] + "/site-config.json", encoding="utf-8"))["releaseDate"]
+bad = 0
+for page, lang in (("index.html", "en"), ("fr.html", "fr")):
+    s = open(page, encoding="utf-8").read()
+    mirror = re.search(r"<!--dc-prerender-start-->(.*?)<!--dc-prerender-end-->", s, re.S)
+    ok = d[lang] in s and (not mirror or d[lang] in mirror.group(1))
+    other = d["fr" if lang == "en" else "en"]
+    print(("  ok: " if ok else "  BAD: ") + "%s shows %s (default and mirror)" % (page, d[lang]))
+    bad |= not ok
+sys.exit(bad)
+PYD
+
+echo "--- (j4) free-extract buttons hidden while hideExtractButtons is true ---"
+python3 - "$SKILL_DIR" <<'PYE' || fail=1
+import json, re, sys
+if not json.load(open(sys.argv[1] + "/site-config.json", encoding="utf-8")).get("hideExtractButtons"):
+    print("  ok: buttons are meant to be shown"); sys.exit(0)
+bad = 0
+for page, text in (("index.html", "Read the introduction and Chapter 1 free"), ("fr.html", "Lire l’introduction et le chapitre 1 gratuitement")):
+    s = open(page, encoding="utf-8").read()
+    tpl = bool(re.search(r'href="#extract"[^>]*>\{\{ t\.heroExtract \}\}', s))
+    m = re.search(r"<!--dc-prerender-start-->(.*?)<!--dc-prerender-end-->", s, re.S)
+    mirror = bool(m and text in m.group(1))
+    ok = not tpl and not mirror
+    print(("  ok: " if ok else "  BAD: ") + "%s has no extract button (template, mirror)" % page)
+    bad |= not ok
+sys.exit(bad)
+PYE
+
 echo "--- (l) layout: desktop 1440 / tablet 768 / mobile 390, EN + FR, no overflow ---"
 python3 "$SKILL_DIR/check-layout.py" || fail=1
 

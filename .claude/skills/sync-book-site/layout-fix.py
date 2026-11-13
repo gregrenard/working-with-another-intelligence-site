@@ -14,6 +14,9 @@ Fix, injected before </head> (`!important` beats the inline styles):
 - stat numbers: allow wrapping and step the size down below 640 px;
 - the hero eyebrow line and the authors/formats line may wrap below 640 px (Design
   gives the latter nowrap + ellipsis, which hid the formats on phones);
+- the authors/formats line wraps at every width, and the foreword credit goes on its own line
+  (the " · " before it becomes a <br>), instead of being cut to "Forew..." by the
+  nowrap + ellipsis Design sets (2026-11-12);
 - a no-horizontal-scroll guard for narrow screens.
 Run AFTER seo-clean-urls.py and BEFORE book-seo.py (fr.html inherits it). Idempotent.
 """
@@ -21,6 +24,7 @@ import sys
 
 CSS = ('<style id="woai-layout-fix">'
        'h1[style*="nowrap"]{white-space:normal!important;text-wrap:balance}'
+       'p[style*="ellipsis"]{white-space:normal!important;text-overflow:clip!important;overflow:visible!important}'
        '@media (max-width:640px){'
        'span[style*="tabular-nums"][style*="nowrap"]{white-space:normal!important;font-size:2rem!important;overflow-wrap:anywhere}'
        'p span[style*="nowrap"],p[style*="nowrap"]{white-space:normal!important;text-overflow:clip!important}'
@@ -33,6 +37,10 @@ if "woai-layout-fix" in s:
     sys.exit(0)
 if "</head>" not in s:
     sys.exit("layout-fix: no </head> in index.html")
+FOREWORD = ' · <span style="color:#CF132F">{{ t.forewordLine }}</span></p>'
+if s.count(FOREWORD) != 1:
+    sys.exit("layout-fix: expected 1 foreword line in the hero meta paragraph, found %d (Design changed it?)" % s.count(FOREWORD))
+s = s.replace(FOREWORD, '<br><span style="color:#CF132F">{{ t.forewordLine }}</span></p>', 1)
 s = s.replace("</head>", CSS + "\n</head>", 1)
 open("index.html", "w", encoding="utf-8").write(s)
 print("layout-fix: index.html patched (hero wrap, stat numbers, no horizontal scroll)")
